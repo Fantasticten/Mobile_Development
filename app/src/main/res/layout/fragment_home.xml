@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".HomeFragment">
+             tools:context=".fragment.HomeFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="home"/>
+
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:background="@color/hijau"
+                        android:layout_height="@dimen/_70sdp"/>
+
+        <androidx.cardview.widget.CardView
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                <ImageView
+                        android:src="@drawable/potoprofil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/imageView"/>
+                <TextView
+                        android:text="Hallo, "
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/textView"/>
+                <TextView
+                        android:text="Diana Cantika Dewi"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2"/>
+            </RelativeLayout>
+
+
+
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
 
 </FrameLayout>

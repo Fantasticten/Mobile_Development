@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.fantasticten.databinding.ActivityMainBinding
+import com.example.fantasticten.fragment.HomeFragment
+import com.example.fantasticten.fragment.JadwalFragment
+import com.example.fantasticten.fragment.NotifikasiFragment
+import com.example.fantasticten.fragment.ProfilFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var  binding : ActivityMainBinding
