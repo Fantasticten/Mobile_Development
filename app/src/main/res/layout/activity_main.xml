@@ -6,24 +6,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:context=".MainActivity" android:id="@+id/relativeLayout">
+
     <FrameLayout
-            android:id="@+id/frameLayout"
-            android:background="@color/backgroundcolor"
-            android:layout_width="wrap_content"
-            android:layout_height="773dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-    >
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="665dp"
+        android:background="@color/backgroundcolor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomBar"
-            android:background="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-            app:layout_constraintVertical_bias="0.532"
-            app:menu="@menu/bottombar"
-            app:layout_constraintStart_toStartOf="@+id/frameLayout"/>
+        android:id="@+id/bottomBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.532"
+        app:menu="@menu/bottombar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
