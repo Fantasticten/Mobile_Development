@@ -28,7 +28,7 @@ android {
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility =JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
@@ -47,6 +47,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 }

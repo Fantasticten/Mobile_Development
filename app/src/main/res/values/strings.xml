@@ -2,6 +2,7 @@
     <string name="app_name">fantasticTen</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+<<<<<<< HEAD
     <string name="artikel">Orang tua harus tau bagaimana cara mencegah gigi
 berlubang pada anak-anak dan merawat nya sejak dini.
 Hal ini penting karena semenjak memasuki usia balita,
@@ -49,4 +50,7 @@ mencegah gigi berlubang pada anak-anak
      dapat terjadi ketika ia lalai menyikat gigi.\n
 
 </string>
+=======
+    <string name="dropdown">Pelayanan</string>
+>>>>>>> e50329128949d35065ee0f90ab6300b8af7b677c
 </resources>

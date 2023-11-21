@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             true
 
         }
+        binding.frameLayout.setOnTouchListener(hide_nav(this,binding.bottomBar))
     }
 
     private fun replaceFragment(fragment: Fragment){
