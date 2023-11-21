@@ -35,7 +35,6 @@
                 android:name=".home_feature.dokter"
                 android:exported="false"/>
         <activity
-<<<<<<< HEAD
             android:name=".Verifikasi"
             android:exported="false" />
         <activity
@@ -46,8 +45,9 @@
             android:exported="false" />
         <activity
             android:name=".LokasiActivity"
-=======
+            android:exported="false" />
 
+        <activity
             android:name=".Tentangapk"
             android:exported="false" />
         <activity
@@ -67,10 +67,6 @@
             android:exported="false" />
         <activity
             android:name=".ProfileRekamMedis"
-            android:exported="false" />
-        <activity
-            android:name=".Verifikasi"
->>>>>>> 7e7c69ce5472ffe696720d041a85bb79a7810734
             android:exported="false" />
         <activity
                 android:name=".Ganti_Sandi"
