@@ -11,23 +11,16 @@ class login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        val daftarLog: TextView = findViewById(R.id.daftarLog)
-        val lupaSan: TextView = findViewById(R.id.lupaSan)
-        val masukAkun: Button = findViewById(R.id.masukAkun)
-
-        daftarLog.setOnClickListener {
-            val intent = Intent(this, Register::class.java)
-            startActivity(intent)
+        findViewById<TextView>(R.id.daftarLog).setOnClickListener {
+            startActivity(Intent(this, Register::class.java))
         }
 
-        lupaSan.setOnClickListener {
-            val intent = Intent(this, Lupa_Sandi::class.java)
-            startActivity(intent)
+        findViewById<TextView>(R.id.lupaSan).setOnClickListener {
+            startActivity(Intent(this, Lupa_Sandi::class.java))
         }
 
-        masukAkun.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        findViewById<Button>(R.id.masukAkun).setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

@@ -2,74 +2,57 @@ package com.example.fantasticten.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.fantasticten.DetailArtikelActivity
 import com.example.fantasticten.R
 import com.example.fantasticten.ViewPagerAdapter
+import com.example.fantasticten.databinding.FragmentJadwalBinding
 import com.google.android.material.tabs.TabLayout
 
-class JadwalFragment : Fragment() {
+class JadwalFragment : Fragment(R.layout.fragment_jadwal) {
 
-    private lateinit var tabLayout: TabLayout
-    private lateinit var viewPager2: ViewPager2
+    private lateinit var binding: FragmentJadwalBinding
     private lateinit var adapter: ViewPagerAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_jadwal, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentJadwalBinding.bind(view)
 
-        val ar1Button: Button = view.findViewById(R.id.ar1)
-        val ar2Button: Button = view.findViewById(R.id.ar2)
-        val ar3Button: Button = view.findViewById(R.id.ar3)
+        val ar1Button: Button = binding.ar1
+        val ar2Button: Button = binding.ar2
+        val ar3Button: Button = binding.ar3
 
-        ar1Button.setOnClickListener {
-            startDetailActivity("1")
+        ar1Button.setOnClickListener { startDetailActivity("1") }
+        ar2Button.setOnClickListener { startDetailActivity("2") }
+        ar3Button.setOnClickListener { startDetailActivity("3") }
+
+        binding.tabLayout.apply {
+            addTab(newTab().setText("Kunjungan"))
+            addTab(newTab().setText("Riwayat"))
+            addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+                override fun onTabSelected(tab: TabLayout.Tab) {
+                    binding.viewPager.currentItem = tab.position
+                }
+
+                override fun onTabUnselected(tab: TabLayout.Tab) {}
+                override fun onTabReselected(tab: TabLayout.Tab) {}
+            })
         }
 
-        ar2Button.setOnClickListener {
-            startDetailActivity("2")
-        }
-
-        ar3Button.setOnClickListener {
-            startDetailActivity("3")
-        }
-
-
-
-        tabLayout = view.findViewById(R.id.tab_layout)
-        viewPager2 = view.findViewById(R.id.view_pager)
-
-        tabLayout.addTab(tabLayout.newTab().setText("Kunjungan"))
-        tabLayout.addTab(tabLayout.newTab().setText("Riwayat"))
+        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
+            }
+        })
 
         val fragmentManager = requireActivity().supportFragmentManager
         adapter = ViewPagerAdapter(fragmentManager, viewLifecycleOwner.lifecycle)
-        viewPager2.adapter = adapter
-
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager2.currentItem = tab.position
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
-
-        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                tabLayout.selectTab(tabLayout.getTabAt(position))
-            }
-        })
-
-        return view
+        binding.viewPager.adapter = adapter
     }
 
     private fun startDetailActivity(artikelId: String) {
