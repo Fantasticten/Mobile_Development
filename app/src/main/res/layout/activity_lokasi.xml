@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundcolor"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/backgroundcolor"
-    tools:context=".fragment.NotifikasiFragment">
+    tools:context=".LokasiActivity">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -62,80 +61,65 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:orientation="vertical">
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                app:cardCornerRadius="0dp"
-                android:layout_marginTop="35dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
                 app:strokeWidth="1dp"
                 app:strokeColor="#9E9B9B">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:orientation="horizontal">
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1"
-                        android:background="@drawable/badge_background"
-                        android:textColor="@color/white"
-                        android:textAlignment="center"
+                        android:text="Alamat"
                         android:textStyle="bold"
-                        android:layout_gravity="center_vertical"
-                        tools:ignore="RtlCompat" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_toEndOf="@+id/imageView"
-                        android:text="Pendaftaran kamu sudah diterima oleh dokter!
-Silahkan klik untuk melihat nomor antrian!"
-                        android:textAlignment="center"
+                        android:layout_marginTop="5dp"
                         android:textColor="@color/black"
-                        android:textSize="13dp"
-                        android:lineSpacingExtra="8dp"
-                        tools:ignore="RtlCompat" />
+                        android:textSize="18dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/location"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="JL Sentot Ali Basa No.36, Jati Mudik,
+Kec.Pariaman Tengah, Kota Pariaman,
+Sumatera Barat"
+                            android:textColor="@color/black"
+                            android:textSize="15dp"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                app:cardCornerRadius="0dp"
-                app:cardElevation="1dp"
-                android:layout_marginTop="20dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="#9E9B9B">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_toEndOf="@+id/imageView"
-                        android:text="Pendaftaran kamu sudah diterima oleh dokter!
-Silahkan klik untuk melihat nomor antrian!"
-                        android:textSize="13dp"
-                        android:layout_marginLeft="6dp"
-                        android:layout_marginRight="6dp"
-                        android:lineSpacingExtra="8dp"
-                        tools:ignore="RtlCompat" />
-
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

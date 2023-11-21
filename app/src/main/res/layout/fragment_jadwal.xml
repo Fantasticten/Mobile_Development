@@ -1,14 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".fragment.JadwalFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundcolor"
+    tools:context=".fragment.JadwalFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@color/hijau" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="350dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:src="@drawable/potoprofil"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/imageView"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_toEndOf="@+id/imageView"
+                                android:text="Diana Cantika Dewi"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold"
+                                tools:ignore="RtlCompat" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_toEndOf="@+id/imageView"
+                                android:text="dianacan16@gmail.com"
+                                android:textColor="@color/black"
+                                android:textSize="15dp"
+                                tools:ignore="RtlCompat" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="jadwal"/>
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:id="@+id/judulJad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Kunjungan Kamu"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bkg_tab"
+                    android:orientation="vertical">
+                    <com.google.android.material.tabs.TabLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/tab_layout"
+                        android:background="@drawable/bkg_tab_jud"
+                        app:layout_constraintVertical_bias="0"
+                        tools:ignore="MissingConstraints" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="-1dp"
+                        android:padding="10dp"
+                        android:id="@+id/view_pager"
+                        android:background="@drawable/bkg_tab_view"
+                        tools:ignore="MissingConstraints"
+                        app:layout_constraintVertical_bias="0"/>
+                </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

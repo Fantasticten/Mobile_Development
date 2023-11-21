@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundcolor"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NomerAntrian">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:background="@color/hijau" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="350dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    app:cardCornerRadius="9dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toEndOf="@+id/imageView"
+                            android:text="Nomor Antrian Kamu"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            tools:ignore="RtlCompat" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardCornerRadius="8dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#9E9B9B">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/splas"
+                        android:paddingTop="20dp"
+                        android:layout_gravity="center"/>
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:stretchColumns="3"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:layout_gravity="center">
+
+                        <TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nama Lengkap"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text=":"
+                                android:gravity="start" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="Diana Cantika Dewi"
+                                android:layout_weight="1" />
+                        </TableRow>
+                        <TableRow android:layout_marginTop="15dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="Pelayanan"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text=":"
+                                android:gravity="start" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="Nambal Gigi Dewasa"
+                                android:layout_weight="1" />
+                        </TableRow>
+                        <TableRow android:layout_marginTop="15dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="Nomor Telepon"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text=":"
+                                android:gravity="start" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="081299094123"
+                                android:layout_weight="1" />
+                        </TableRow>
+                        <TableRow android:layout_marginTop="15dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="Jadwal"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text=":"
+                                android:gravity="start" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="Rabu / 15-11-2023"
+                                android:layout_weight="1" />
+                        </TableRow>
+                        <TableRow android:layout_marginTop="15dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="No. Antrian"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:text=":"
+                                android:gravity="start" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="17dp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:text="11 / 16.00 WIB"
+                                android:layout_weight="1" />
+                        </TableRow>
+                    </TableLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
