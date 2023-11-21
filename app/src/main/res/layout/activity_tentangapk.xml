@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tentangapk">
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_46sdp"
+            android:background="@color/hijau" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="329dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:cardCornerRadius="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+
+                <ImageView
+                    android:id="@+id/btntenTang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pkembali" />
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Tentang"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_16sdp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:layout_margin="24dp"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="171dp"
+
+            android:layout_gravity="center"
+            android:src="@drawable/splas" />
+
+
+
+        <TextView
+            android:id="@+id/textViewClinicInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Klinik Kei Dental Care"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+
+        <TextView
+            android:id="@+id/textViewClinicDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kei Dental Clinic adalah klinik gigi modern yang dijalankan oleh Dokter Rima, seorang profesional terkemuka di bidang kedokteran gigi. Klinik ini menawarkan layanan lengkap mulai dari pemeriksaan rutin hingga perawatan spesialis, seperti perawatan ortodontik, perbaikan gigi rusak, dan perawatan kosmetik."
+            android:layout_below="@id/textViewClinicInfo"
+            android:layout_marginTop="8dp"/>
+
+
+
+
+        <TextView
+            android:id="@+id/textViewContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hubungi Kami"
+            android:textStyle="bold"
+
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Informasi Kontak -->
+        <TextView
+            android:id="@+id/textViewContactInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: service.dencare@gmail.com\nPhone:08123456789 - Rima\nJl. Sentot Ali Basa No.36  Sumatera Barat 25519"
+            android:layout_below="@id/textViewContact"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

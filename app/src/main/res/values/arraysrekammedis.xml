@@ -1,0 +1,24 @@
+<!-- arraysrekammedis.xml -->
+<resources>
+    <string-array name="history_dates">
+        <item>11-November-2023</item>
+        <item>11-September-2023</item>
+        <item>15-Juli-2023</item>
+
+
+    </string-array>
+
+    <string-array name="history_doctors">
+        <item>Drg. Rima Yunita.R </item>
+        <item>Drg. Rima Yunita.R </item>
+        <item>Drg. Rima Yunita.R </item>
+
+
+    </string-array>
+
+    <string-array name="history_actions">
+        <item>Perawatan Gigi</item>
+        <item>Pencabutan Gigi Dewasa</item>
+        <item>Konsultasi</item>
+    </string-array>
+</resources>

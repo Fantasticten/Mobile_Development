@@ -13,6 +13,27 @@
         android:theme="@style/Theme.FantasticTen"
         tools:targetApi="31">
         <activity
+            android:name=".Tentangapk"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RekamMedis"
+            android:exported="false" />
+        <activity
+            android:name=".Splash"
+            android:exported="false" />
+        <activity
+            android:name=".Edit_Profile"
+            android:exported="false" />
+        <activity
+            android:name=".edit_katasandi"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileRekamMedis"
+            android:exported="false" />
+        <activity
             android:name=".Verifikasi"
             android:exported="false" />
         <activity
@@ -28,10 +49,10 @@
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".PusatBantuan"
             android:exported="false" />
         <activity
-            android:name=".Splash"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
