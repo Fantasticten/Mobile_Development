@@ -39,9 +39,8 @@
                         android:layout_height="match_parent"
                         android:padding="@dimen/_10sdp">
 
-
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/backArtikel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -89,6 +88,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/imageAr"
                         android:layout_width="340dp"
                         android:layout_height="185dp"
                         android:layout_gravity="center"
@@ -102,6 +102,7 @@
                         android:textSize="15dp" />
 
                     <TextView
+                        android:id="@+id/text_judul_artikel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
@@ -118,6 +119,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/text_penulis"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
@@ -127,8 +129,9 @@
                             android:textSize="15dp" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center_vertical"
                             android:src="@drawable/outline_remove_red_eye_24" />
 
                         <TextView
@@ -144,6 +147,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/text_isi_artikel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"

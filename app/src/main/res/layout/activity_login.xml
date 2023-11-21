@@ -82,6 +82,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/lupaSan"
             android:layout_width="wrap_content"
             android:layout_gravity="right"
             android:textSize="20dp"
@@ -89,9 +90,10 @@
             android:text="Lupa Kata Sandi ? "/>
 
         <Button
+            android:id="@+id/masukAkun"
             android:layout_width="140dp"
             android:layout_height="60dp"
-            android:text="Daftar"
+            android:text="Masuk"
             android:textSize="20dp"
             android:layout_marginTop="25dp"
             android:textStyle="bold"
@@ -112,12 +114,13 @@
                 android:text="Sudah Punya Akun? "/>
 
             <TextView
+                android:id="@+id/daftarLog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="@color/hijau"
-                android:text="Masuk"/>
+                android:text="Daftar"/>
 
         </LinearLayout>
 

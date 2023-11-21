@@ -45,7 +45,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_toEndOf="@+id/imageView"
-                            android:text="Semua Notifikasi Mu, Ada Disini"
+                            android:text="Cek Lokasi Kei Dental Care"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="20dp"
@@ -67,13 +67,11 @@
             android:layout_marginTop="40dp">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="8dp"
                 app:strokeWidth="1dp"
                 app:strokeColor="#9E9B9B">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -98,6 +96,7 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/lokasiGo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/location"/>

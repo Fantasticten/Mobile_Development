@@ -10,6 +10,8 @@ import android.widget.ImageButton
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.fantasticten.LokasiActivity
+import com.example.fantasticten.NomerAntrian
 import com.example.fantasticten.R
 import com.example.fantasticten.home_feature.Daftar_Antrian
 
@@ -39,6 +41,11 @@ class HomeFragment : Fragment() {
 
         daftarAntrian.setOnClickListener{
             val intent = Intent(activity,Daftar_Antrian::class.java)
+            startActivity(intent)
+        }
+
+        lokasi.setOnClickListener {
+            val intent = Intent(requireContext(), LokasiActivity::class.java)
             startActivity(intent)
         }
 

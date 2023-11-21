@@ -205,6 +205,7 @@
                 </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyle2"
                         android:layout_marginTop="20dp"
@@ -214,6 +215,7 @@
                         tools:layout_editor_absoluteX="-8dp"
                         tools:ignore="MissingConstraints"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </ScrollView>
 
     </RelativeLayout>

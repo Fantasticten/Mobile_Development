@@ -57,6 +57,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/verify"
             android:layout_width="170dp"
             android:layout_height="60dp"
             android:text="Konfirmasi"
