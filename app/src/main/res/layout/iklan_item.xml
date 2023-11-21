@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bgcardhome"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/iklan"
+                android:id="@+id/imageViewiklan"/>
+
+    <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_below="@+id/imageViewiklan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+                android:text="Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView16"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
