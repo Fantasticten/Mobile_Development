@@ -16,6 +16,12 @@
             android:theme="@style/Theme.FantasticTen"
             tools:targetApi="31">
         <activity
+                android:name=".home_feature.Dokter"
+                android:exported="false"/>
+        <activity
+                android:name=".home_feature.Treatment"
+                android:exported="false"/>
+        <activity
                 android:name=".home_feature.Daftar_Antrian"
                 android:exported="false"/>
         <activity
@@ -31,30 +37,29 @@
                 android:name=".home_feature.dokter"
                 android:exported="false"/>
         <activity
-
-            android:name=".Tentangapk"
-            android:exported="false" />
+                android:name=".Tentangapk"
+                android:exported="false"/>
         <activity
-            android:name=".RiwayatActivity"
-            android:exported="false" />
+                android:name=".RiwayatActivity"
+                android:exported="false"/>
         <activity
-            android:name=".RekamMedis"
-            android:exported="false" />
+                android:name=".RekamMedis"
+                android:exported="false"/>
         <activity
-            android:name=".Splash"
-            android:exported="false" />
+                android:name=".Splash"
+                android:exported="false"/>
         <activity
-            android:name=".Edit_Profile"
-            android:exported="false" />
+                android:name=".Edit_Profile"
+                android:exported="false"/>
         <activity
-            android:name=".edit_katasandi"
-            android:exported="false" />
+                android:name=".edit_katasandi"
+                android:exported="false"/>
         <activity
-            android:name=".ProfileRekamMedis"
-            android:exported="false" />
+                android:name=".ProfileRekamMedis"
+                android:exported="false"/>
         <activity
-            android:name=".Verifikasi"
-            android:exported="false" />
+                android:name=".Verifikasi"
+                android:exported="false"/>
         <activity
                 android:name=".Ganti_Sandi"
                 android:exported="false"/>
@@ -68,17 +73,21 @@
                 android:name=".Register"
                 android:exported="false"/>
         <activity
-            android:name=".PusatBantuan"
-            android:exported="false" />
+                android:name=".PusatBantuan"
+                android:exported="false"/>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+                android:name=".MainActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts"/>
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottombar"
+            android:outlineAmbientShadowColor="@color/hijau"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"/>
 

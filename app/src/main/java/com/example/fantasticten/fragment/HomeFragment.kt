@@ -7,13 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.fantasticten.R
-import com.example.fantasticten.home_feature.Daftar_Antrian
+import com.example.fantasticten.adapter.iklan_adapter
+import com.example.fantasticten.home_feature.*
+import com.example.fantasticten.iklan_item
 
 class HomeFragment : Fragment() {
+    private lateinit var newsarrayList: ArrayList<iklan_item>
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var iklanAdapter: iklan_adapter
+    lateinit var imageid :Array<Int>
+    lateinit var tulis :Array<String>
+    lateinit var iklan2 :Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,10 +51,69 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity,Daftar_Antrian::class.java)
             startActivity(intent)
         }
+        program.setOnClickListener{
+            val intent = Intent(activity,Program::class.java)
+            startActivity(intent)
+        }
+        konsultasi.setOnClickListener{
+            val intent = Intent(activity,Konsultasi::class.java)
+            startActivity(intent)
+
+        tretment.setOnClickListener{
+            val intent = Intent(activity,Treatment::class.java)
+            startActivity(intent)
+        }
+        dokter.setOnClickListener{
+            val intent = Intent(activity,Dokter::class.java)
+            startActivity(intent)
+        }}
 
 
 
 
         return next
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setdataList()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recyle2)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        iklanAdapter = iklan_adapter(newsarrayList)
+        recyclerView.adapter=iklanAdapter
+    }
+
+
+    private fun setdataList() {
+
+       newsarrayList = arrayListOf<iklan_item>()
+        imageid = arrayOf(
+            R.drawable.iklan,
+            R.drawable.iklan,
+            R.drawable.iklan,
+            R.drawable.iklan,
+            R.drawable.iklan,
+            R.drawable.iklan,
+            R.drawable.iklan,
+            R.drawable.iklan,
+        )
+        tulis = arrayOf(
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+
+        )
+        for (i in imageid.indices){
+            val news = iklan_item(imageid[i],tulis[i])
+            newsarrayList.add(news)
+        }
+
     }
 }
