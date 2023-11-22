@@ -97,25 +97,14 @@ class HomeFragment : Fragment() {
 
        newsarrayList = arrayListOf<iklan_item>()
         imageid = arrayOf(
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
+            R.drawable.imageartikel,
+            R.drawable.imageartikel2,
+            R.drawable.imageartikel3,
         )
         tulis = arrayOf(
           "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
           "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
           "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-
         )
         for (i in imageid.indices){
             val news = iklan_item(imageid[i],tulis[i])

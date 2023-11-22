@@ -35,13 +35,6 @@
                 android:name=".home_feature.Program"
                 android:exported="false"/>
         <activity
-                android:name=".home_feature.treatment"
-                android:exported="false"/>
-        <activity
-                android:name=".home_feature.dokter"
-                android:exported="false"/>
-        <activity
-<<<<<<< HEAD
             android:name=".Verifikasi"
             android:exported="false" />
         <activity
@@ -53,14 +46,9 @@
         <activity
             android:name=".LokasiActivity"
             android:exported="false" />
-
         <activity
             android:name=".Tentangapk"
             android:exported="false" />
-=======
-                android:name=".Tentangapk"
-                android:exported="false"/>
->>>>>>> 4c58f0afc945522e5be303a5bdee24ca9714d5b4
         <activity
                 android:name=".RiwayatActivity"
                 android:exported="false"/>
@@ -68,13 +56,8 @@
                 android:name=".RekamMedis"
                 android:exported="false"/>
         <activity
-<<<<<<< HEAD
-            android:name=".MainActivity"
-            android:exported="false" />
-=======
-                android:name=".Splash"
-                android:exported="false"/>
->>>>>>> 4c58f0afc945522e5be303a5bdee24ca9714d5b4
+            android:name=".Splash"
+            android:exported="false"/>
         <activity
                 android:name=".Edit_Profile"
                 android:exported="false"/>
@@ -85,12 +68,6 @@
                 android:name=".ProfileRekamMedis"
                 android:exported="false"/>
         <activity
-<<<<<<< HEAD
-=======
-                android:name=".Verifikasi"
-                android:exported="false"/>
-        <activity
->>>>>>> 4c58f0afc945522e5be303a5bdee24ca9714d5b4
                 android:name=".Ganti_Sandi"
                 android:exported="false"/>
         <activity
@@ -105,14 +82,10 @@
         <activity
                 android:name=".PusatBantuan"
                 android:exported="false"/>
+
         <activity
-<<<<<<< HEAD
-            android:name=".Splash"
+            android:name=".MainActivity"
             android:exported="true">
-=======
-                android:name=".MainActivity"
-                android:exported="true">
->>>>>>> 4c58f0afc945522e5be303a5bdee24ca9714d5b4
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
