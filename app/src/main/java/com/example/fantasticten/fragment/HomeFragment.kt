@@ -91,23 +91,23 @@ class HomeFragment : Fragment() {
        newsarrayList = arrayListOf<iklan_item>()
         imageid = arrayOf(
             R.drawable.iklan,
+            R.drawable.artike1,
+            R.drawable.artikel2,
             R.drawable.iklan,
+            R.drawable.artike1,
+            R.drawable.artikel2,
             R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
-            R.drawable.iklan,
+            R.drawable.artike1,
         )
         tulis = arrayOf(
           "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Penyebab gigi copot dan cara mengatasinya",
+          "Berikut ini adalah cara mengatasi gigi kuning menurut dokter gigi",
           "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Penyebab gigi copot dan cara mengatasinya",
+          "Berikut ini adalah cara mengatasi gigi kuning menurut dokter gigi",
           "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+          "Penyebab gigi copot dan cara mengatasinya",
 
         )
         for (i in imageid.indices){

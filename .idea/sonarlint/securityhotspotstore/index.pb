@@ -195,3 +195,5 @@ Q.idea/sonarlint/securityhotspotstore/a/2/a23c5826b9e43ac800045078039410ea3817eb
 Q.idea/sonarlint/securityhotspotstore/9/0/9016c70aa6a9c66c8fe0fac9420379913f6417d7,c\6\c64caa48e9f529e20790688ca92aca33b36dc719
 w
 G.idea/sonarlint/issuestore/9/0/9016c70aa6a9c66c8fe0fac9420379913f6417d7,1\f\1f2db05d82f9061c6eaa8a5ec440f3d15a858708
+|
+Lapp/src/main/java/com/example/fantasticten/home_feature/chat/ChatAktivity.kt,b\4\b4f05c60ae49be892957192fac76589045039e8e
