@@ -33,12 +33,12 @@
         <activity
                 android:name=".home_feature.Program"
                 android:exported="false"/>
-        <activity
-                android:name=".home_feature.treatment"
-                android:exported="false"/>
-        <activity
-                android:name=".home_feature.dokter"
-                android:exported="false"/>
+<!--        <activity-->
+<!--                android:name=".home_feature.treatment"-->
+<!--                android:exported="false"/>-->
+<!--        <activity-->
+<!--                android:name=".home_feature.dokter"-->
+<!--                android:exported="false"/>-->
         <activity
                 android:name=".Tentangapk"
                 android:exported="false"/>
