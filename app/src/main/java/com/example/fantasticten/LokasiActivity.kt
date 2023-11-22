@@ -52,32 +52,6 @@ class LokasiActivity : AppCompatActivity() {
     }
 
 
-//    private fun showCustomDialog() {
-//        val dialogView = layoutInflater.inflate(R.layout.dialog_alert, null)
-//
-//        val closeButton: ImageView = dialogView.findViewById(R.id.closeButton)
-//        val keluarButton: Button = dialogView.findViewById(R.id.buttonkeluar)
-//        val textView: TextView = dialogView.findViewById(R.id.textView38)
-//
-//        val dialog = AlertDialog.Builder(this@LokasiActivity).setView(dialogView).create()
-//
-//        closeButton.setOnClickListener {
-//            dialog.dismiss()
-//        }
-//
-//        keluarButton.setOnClickListener {
-//            openGoogleMaps()
-//            dialog.dismiss()
-//        }
-//
-//        textView.text = "Izinkan aplikasi untuk melihat \n" +
-//                "lokasi?"
-//        keluarButton.text = "Ya, Izinkan"
-//
-//        dialog.show()
-//    }
-
-
     private fun openGoogleMaps() {
         val alamatTujuan = "KeidentalCare, Jl. Sentot Ali Basa No.36, Jati Mudik, Kec. Pariaman Tengah, Kota Pariaman, Sumatera Barat 25519"
         val uri = "http://maps.google.com/maps?saddr=&daddr=$alamatTujuan"
