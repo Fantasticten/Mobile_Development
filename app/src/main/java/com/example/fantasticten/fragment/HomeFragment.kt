@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.fantasticten.DetailArtikelActivity
 import com.example.fantasticten.LokasiActivity
-import com.example.fantasticten.NomerAntrian
 import com.example.fantasticten.R
 import com.example.fantasticten.adapter.iklan_adapter
 import com.example.fantasticten.home_feature.*
@@ -57,18 +57,20 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity,Program::class.java)
             startActivity(intent)
         }
-        konsultasi.setOnClickListener{
-            val intent = Intent(activity,Konsultasi::class.java)
+        konsultasi.setOnClickListener {
+            val intent = Intent(activity, Konsultasi::class.java)
             startActivity(intent)
+        }
 
         tretment.setOnClickListener{
             val intent = Intent(activity,Treatment::class.java)
             startActivity(intent)
         }
+
         dokter.setOnClickListener{
             val intent = Intent(activity,Dokter::class.java)
             startActivity(intent)
-        }}
+        }
 
         lokasi.setOnClickListener {
             val intent = Intent(requireContext(), LokasiActivity::class.java)
@@ -89,27 +91,39 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         iklanAdapter = iklan_adapter(newsarrayList)
-        recyclerView.adapter=iklanAdapter
+        recyclerView.adapter = iklanAdapter
+
+        iklanAdapter.setOnItemClickListener(object : iklan_adapter.OnItemClickListener {
+            override fun onItemClick(artikelId: String) {
+                startDetailActivity(artikelId)
+            }
+        })
     }
 
 
-    private fun setdataList() {
 
-       newsarrayList = arrayListOf<iklan_item>()
+    private fun setdataList() {
+        newsarrayList = arrayListOf<iklan_item>()
         imageid = arrayOf(
             R.drawable.imageartikel,
             R.drawable.imageartikel2,
             R.drawable.imageartikel3,
         )
         tulis = arrayOf(
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
-          "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+            "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+            "Penyebab gigi copot dan cara mengatasinya",
+            "Berikut ini adalah cara mengatasi gigi kuning menurut dokter gigi",
         )
         for (i in imageid.indices){
-            val news = iklan_item(imageid[i],tulis[i])
+            val news = iklan_item(imageid[i],tulis[i], i)
             newsarrayList.add(news)
         }
-
     }
+
+    private fun startDetailActivity(artikelId: String) {
+        val intent = Intent(requireContext(), DetailArtikelActivity::class.java)
+        intent.putExtra("ARTIKEL_ID", artikelId)
+        startActivity(intent)
+    }
+
 }

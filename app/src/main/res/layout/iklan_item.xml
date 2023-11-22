@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
+android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="30dp"
         android:background="@drawable/bgcardhome"
         xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"

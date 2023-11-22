@@ -23,14 +23,6 @@ class JadwalFragment : Fragment(R.layout.fragment_jadwal) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentJadwalBinding.bind(view)
 
-        val ar1Button: Button = binding.ar1
-        val ar2Button: Button = binding.ar2
-        val ar3Button: Button = binding.ar3
-
-        ar1Button.setOnClickListener { startDetailActivity("1") }
-        ar2Button.setOnClickListener { startDetailActivity("2") }
-        ar3Button.setOnClickListener { startDetailActivity("3") }
-
         binding.tabLayout.apply {
             addTab(newTab().setText("Kunjungan"))
             addTab(newTab().setText("Riwayat"))
@@ -55,9 +47,4 @@ class JadwalFragment : Fragment(R.layout.fragment_jadwal) {
         binding.viewPager.adapter = adapter
     }
 
-    private fun startDetailActivity(artikelId: String) {
-        val intent = Intent(requireContext(), DetailArtikelActivity::class.java)
-        intent.putExtra("ARTIKEL_ID", artikelId)
-        startActivity(intent)
-    }
 }

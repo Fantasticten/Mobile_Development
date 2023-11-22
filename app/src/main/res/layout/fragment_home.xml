@@ -60,19 +60,22 @@
 
         </androidx.cardview.widget.CardView>
         <ScrollView
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@+id/cardview"
+            android:layout_marginBottom="73dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                     android:padding="@dimen/_5sdp"
                 android:layout_width="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content">
 
                 <com.denzcoskun.imageslider.ImageSlider
-                        app:iss_corner_radius="@integer/material_motion_duration_short_1"
+                        app:iss_corner_radius="20"
                         android:id="@+id/image_slider"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
@@ -86,7 +89,7 @@
                         app:cardCornerRadius="10dp"
                         android:background="@drawable/bgcardhome"
                         android:id="@+id/cardView"
-                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginTop="25dp"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         app:layout_constraintTop_toBottomOf="@+id/image_slider">
@@ -108,6 +111,7 @@
                     <TextView
                             android:layout_below="@+id/konsultasi"
                             android:text="Konsultasi"
+                            android:layout_marginTop="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textViewkonsultasi"/>
@@ -123,6 +127,7 @@
                             android:layout_marginStart="60dp"
                             android:layout_below="@+id/program"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="3dp"
                             android:text="Program"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -141,6 +146,7 @@
                             android:layout_toEndOf="@+id/textViewProgram"
                             android:layout_below="@+id/treatment"
                             android:layout_marginEnd="2dp"
+                            android:layout_marginTop="3dp"
                             android:layout_alignParentRight="true"
                             android:text="Tretment"
                             android:layout_width="0dp"
@@ -149,7 +155,7 @@
                     <ImageButton
                             android:background="@drawable/bgiconimage"
                             android:layout_marginStart="5dp"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="30dp"
                             android:layout_below="@+id/konsultasi"
                             android:src="@drawable/dftarantrian"
                             android:layout_width="60dp"
@@ -169,7 +175,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:id="@+id/doktor"
-                            android:layout_marginTop="21dp"
+                        android:layout_marginTop="30dp"
                             android:layout_marginStart="61dp"/>
                     <TextView
                             android:layout_marginStart="65dp"
@@ -184,7 +190,7 @@
                             android:background="@drawable/bgiconimage"
                             android:layout_marginStart="63dp"
                             android:layout_alignParentEnd="true"
-                            android:layout_marginTop="20dp"
+                        android:layout_marginTop="30dp"
                             android:layout_below="@+id/treatment"
                             android:src="@drawable/lokasi"
                             android:layout_width="60dp"
@@ -206,14 +212,25 @@
                 </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
+                <TextView
+                    android:id="@+id/ar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Artikel"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView"
+                    tools:ignore="MissingConstraints" />
 
                 <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyle2"
-                        android:layout_marginTop="20dp"
-                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView"
-                        tools:ignore="MissingConstraints" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ar"
+                        tools:ignore="MissingConstraints"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 

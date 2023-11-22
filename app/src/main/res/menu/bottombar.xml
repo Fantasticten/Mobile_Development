@@ -5,10 +5,10 @@
           android:title="Home"/>
     <item android:id="@+id/jadwal"
           android:icon="@drawable/calendar"
-          android:title="pesan"/>
+          android:title="Jadwal"/>
     <item android:id="@+id/notifikasi"
           android:icon="@drawable/notifikasi"
-          android:title="notifikasi"/>
+          android:title="Notifikasi"/>
     <item android:id="@+id/profil"
           android:icon="@drawable/profil"
           android:title="Profil"/>
