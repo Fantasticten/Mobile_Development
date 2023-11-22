@@ -51,14 +51,19 @@ class LokasiActivity : AppCompatActivity() {
         dialog.show()
     }
 
-
     private fun openGoogleMaps() {
         val alamatTujuan = "KeidentalCare, Jl. Sentot Ali Basa No.36, Jati Mudik, Kec. Pariaman Tengah, Kota Pariaman, Sumatera Barat 25519"
         val uri = "http://maps.google.com/maps?saddr=&daddr=$alamatTujuan"
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
         intent.setPackage("com.google.android.apps.maps")
+
+
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
+        } else {
+            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+            startActivity(webIntent)
         }
     }
+
 }
