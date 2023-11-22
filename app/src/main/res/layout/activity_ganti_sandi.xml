@@ -82,6 +82,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/gantiSanMas"
             android:layout_width="170dp"
             android:layout_height="60dp"
             android:text="Lanjutkan"

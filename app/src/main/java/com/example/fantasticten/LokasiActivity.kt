@@ -1,13 +1,17 @@
 package com.example.fantasticten
 
-import android.content.DialogInterface
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.view.Window
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.card.MaterialCardView
 
 class LokasiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,22 +20,63 @@ class LokasiActivity : AppCompatActivity() {
 
         val cardView: ImageView = findViewById(R.id.lokasiGo)
         cardView.setOnClickListener {
-            showLocationConfirmationDialog()
+            showCustomDialog()
         }
     }
 
-    private fun showLocationConfirmationDialog() {
-        val builder = AlertDialog.Builder(this@LokasiActivity)
-        builder.setMessage("Izinkan Aplikasi untuk melihat lokasi?")
-            .setPositiveButton("Ya") { dialog, which ->
-                openGoogleMaps()
-            }
-            .setNegativeButton("Tidak") { dialog, which ->
-                dialog.dismiss()
-            }
-        val dialog = builder.create()
+    private fun showCustomDialog() {
+        val dialog = Dialog(this@LokasiActivity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialog_alert)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val view: TextView = dialog.findViewById(R.id.textView38)
+        val closeButton: ImageView = dialog.findViewById(R.id.closeButton)
+        val btyes: Button = dialog.findViewById(R.id.buttonkeluar)
+
+        view.text = "Izinkan aplikasi untuk melihat lokasi?"
+
+        btyes.text = "Ya, Izinkan"
+
+        btyes.setOnClickListener {
+            openGoogleMaps()
+            dialog.dismiss()
+        }
+
+        closeButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
         dialog.show()
     }
+
+
+//    private fun showCustomDialog() {
+//        val dialogView = layoutInflater.inflate(R.layout.dialog_alert, null)
+//
+//        val closeButton: ImageView = dialogView.findViewById(R.id.closeButton)
+//        val keluarButton: Button = dialogView.findViewById(R.id.buttonkeluar)
+//        val textView: TextView = dialogView.findViewById(R.id.textView38)
+//
+//        val dialog = AlertDialog.Builder(this@LokasiActivity).setView(dialogView).create()
+//
+//        closeButton.setOnClickListener {
+//            dialog.dismiss()
+//        }
+//
+//        keluarButton.setOnClickListener {
+//            openGoogleMaps()
+//            dialog.dismiss()
+//        }
+//
+//        textView.text = "Izinkan aplikasi untuk melihat \n" +
+//                "lokasi?"
+//        keluarButton.text = "Ya, Izinkan"
+//
+//        dialog.show()
+//    }
+
 
     private fun openGoogleMaps() {
         val alamatTujuan = "KeidentalCare, Jl. Sentot Ali Basa No.36, Jati Mudik, Kec. Pariaman Tengah, Kota Pariaman, Sumatera Barat 25519"

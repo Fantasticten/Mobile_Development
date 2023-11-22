@@ -162,6 +162,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/daftarGo"
             android:layout_width="140dp"
             android:layout_height="60dp"
             android:text="Daftar"

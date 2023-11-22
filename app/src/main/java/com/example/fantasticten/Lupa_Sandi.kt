@@ -12,9 +12,15 @@ class Lupa_Sandi : AppCompatActivity() {
         setContentView(R.layout.activity_lupa_sandi)
 
         val verify: Button = findViewById(R.id.verify)
+        val masuk: TextView = findViewById(R.id.masukLup)
 
         verify.setOnClickListener {
             val intent = Intent(this, Verifikasi::class.java)
+            startActivity(intent)
+        }
+
+        masuk.setOnClickListener {
+            val intent = Intent(this, login::class.java)
             startActivity(intent)
         }
     }

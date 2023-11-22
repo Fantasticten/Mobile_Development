@@ -164,6 +164,7 @@
                     <TextView
                             android:layout_below="@+id/dftrantrian"
                             android:text="Daftar Antrian"
+                            android:layout_marginTop="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textViewdaftrantrian"/>
@@ -181,6 +182,7 @@
                             android:layout_marginStart="65dp"
                             android:layout_below="@+id/doktor"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="3dp"
                             android:text="Dokter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -202,6 +204,7 @@
                             android:paddingEnd="10dp"
                             android:layout_toEndOf="@+id/textViewProgram"
                             android:layout_below="@+id/lokasi"
+                            android:layout_marginTop="3dp"
                             android:layout_alignParentEnd="true"
                             android:text="Lokasi"
                             android:layout_width="69dp"

@@ -10,9 +10,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import com.example.fantasticten.Edit_Profile
 import com.example.fantasticten.ProfileRekamMedis
 import com.example.fantasticten.PusatBantuan
@@ -79,16 +81,22 @@ class ProfilFragment : Fragment() {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         val view: TextView = dialog.findViewById(R.id.textView38)
-        val btyes: TextView = dialog.findViewById(R.id.button3)
-        val btno: TextView = dialog.findViewById(R.id.button2)
+        val closeButton: ImageView = dialog.findViewById(R.id.closeButton)
+        val btyes: TextView = dialog.findViewById(R.id.buttonkeluar)
         view.text = message
+
         btyes.setOnClickListener {
-            val intent =Intent(activity, Splash::class.java)
+            val intent = Intent(activity, Splash::class.java)
             startActivity(intent)
+
+            requireActivity().finishAffinity()
         }
-        btno.setOnClickListener {
+
+
+        closeButton.setOnClickListener {
             dialog.dismiss()
         }
+
         dialog.show()
     }
 
