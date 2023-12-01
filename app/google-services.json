@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "405533877317",
+    "firebase_url": "https://fanaticten-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fanaticten",
+    "storage_bucket": "fanaticten.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405533877317:android:739658c71e77621dd16f2c",
+        "android_client_info": {
+          "package_name": "com.example.fantasticten"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdZR7qPBRjkXBtuEPJg92dT1WlUKpIM90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

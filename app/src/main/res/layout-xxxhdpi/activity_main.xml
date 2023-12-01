@@ -11,7 +11,8 @@
     <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 
@@ -22,7 +23,10 @@
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottombar"
-            android:outlineAmbientShadowColor="@color/hijau"
+            app:itemIconTint="@color/hijau"
+            app:itemTextColor="@color/hijau"
+            app:backgroundTint="@color/white"
+            app:itemBackground="@color/white"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"/>
 

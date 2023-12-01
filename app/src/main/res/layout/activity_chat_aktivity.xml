@@ -63,19 +63,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:ems="10"
                 android:id="@+id/editTextChat"
                 android:layout_weight="1"/>
         <ImageButton
                 android:layout_margin="10dp"
-                android:scaleType="fitCenter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:srcCompat="@drawable/camera"
+                app:srcCompat="@drawable/baseline_photo_camera_24"
                 android:id="@+id/imageButton2"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleX="2"
-                android:scaleY="2"/>
+                android:backgroundTint="#00FFFFFF"/>
         <ImageButton
                 android:layout_margin="10dp"
                 android:layout_width="50dp"

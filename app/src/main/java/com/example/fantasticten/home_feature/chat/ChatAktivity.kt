@@ -1,7 +1,6 @@
 package com.example.fantasticten.home_feature.chat
 
 import android.os.Bundle
-import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fantasticten.R
