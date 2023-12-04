@@ -7,6 +7,28 @@
     android:background="@color/backgroundcolor"
     tools:context=".Register">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#80000000"
+        android:id="@+id/progressBar">
+
+        <ProgressBar
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_centerInParent="true"
+            android:elevation="100dp"
+            android:indeterminate="true"/>
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
@@ -23,9 +45,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginLeft="15sp"
         android:layout_marginRight="15sp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.20"
@@ -40,20 +62,27 @@
             <TextView
                 android:id="@+id/textViewNamaLengkap"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
-                android:textSize="15dp"
                 android:layout_height="wrap_content"
-                android:text="Nama Lengkap" />
+                android:text="Nama Lengkap"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            <EditText
-                android:id="@+id/editTextNamaLengkap"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNamaLengkap"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:inputType="text"
-                android:textSize="20sp"
-                android:background="@drawable/edit_background"
-                android:padding="8dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNamaLengkap"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_background"
+                    android:inputType="text"
+                    android:padding="0dp"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -66,20 +95,27 @@
             <TextView
                 android:id="@+id/textViewEmail"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
-                android:textSize="15dp"
                 android:layout_height="wrap_content"
-                android:text="Email" />
+                android:text="Email"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            <EditText
-                android:id="@+id/editTextEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutEmail"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:inputType="textEmailAddress"
-                android:textSize="20sp"
-                android:background="@drawable/edit_background"
-                android:padding="8dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_background"
+                    android:inputType="text"
+                    android:padding="0dp"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -92,20 +128,27 @@
             <TextView
                 android:id="@+id/textViewNoTlp"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
-                android:textSize="15dp"
                 android:layout_height="wrap_content"
-                android:text="Nomer Telepon" />
+                android:text="Nomer Telepon"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            <EditText
-                android:id="@+id/editTextNoTlp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNoTlp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:inputType="number"
-                android:textSize="20sp"
-                android:background="@drawable/edit_background"
-                android:padding="8dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextNoTlp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_background"
+                    android:inputType="text"
+                    android:padding="0dp"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -118,20 +161,28 @@
             <TextView
                 android:id="@+id/textViewSandi"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
-                android:textSize="15dp"
                 android:layout_height="wrap_content"
-                android:text="Kata Sandi" />
+                android:text="Kata Sandi"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            <EditText
-                android:id="@+id/editTextSandi"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutSandi"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:inputType="textPassword"
-                android:textSize="20sp"
-                android:background="@drawable/edit_background"
-                android:padding="8dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextSandi"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_background"
+                    android:inputType="textPassword"
+                    android:padding="0dp"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -144,20 +195,28 @@
             <TextView
                 android:id="@+id/textViewSandiRef"
                 android:layout_width="match_parent"
-                android:textColor="@color/black"
-                android:textSize="15dp"
                 android:layout_height="wrap_content"
-                android:text="Ulangi Kata Sandi" />
+                android:text="Ulangi Kata Sandi"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
 
-            <EditText
-                android:id="@+id/editTextSandiRef"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutSandiRef"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:inputType="textPassword"
-                android:textSize="20sp"
-                android:background="@drawable/edit_background"
-                android:padding="8dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextSandiRef"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edit_background"
+                    android:inputType="textPassword"
+                    android:padding="0dp"
+                    android:textSize="20sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -165,40 +224,39 @@
             android:id="@+id/daftarGo"
             android:layout_width="140dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:text="Daftar"
             android:textSize="20dp"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:layout_gravity="center" />
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="25dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:textAlignment="center"
-                android:textSize="20dp"
                 android:layout_height="wrap_content"
-                android:text="Sudah Punya Akun? "/>
+                android:text="Sudah Punya Akun? "
+                android:textAlignment="center"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/masukLog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
+                android:text="Masuk"
                 android:textColor="@color/hijau"
-                android:text="Masuk"/>
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
