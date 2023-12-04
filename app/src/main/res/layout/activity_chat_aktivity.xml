@@ -40,14 +40,25 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:padding="20dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview133">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tampilchat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="0dp"
+            android:padding="20dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintTop_toBottomOf="@+id/cardview133"
-            app:layout_constraintVertical_bias="0.068"/>
+            app:layout_constraintVertical_bias="0.068"
+            tools:layout_editor_absoluteX="0dp" />
+    </ScrollView>
     <LinearLayout
             android:background="@color/hijau"
             android:orientation="horizontal"

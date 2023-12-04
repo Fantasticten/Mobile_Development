@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -45,6 +46,10 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("io.github.chaosleung:pinview:1.4.4")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation ("com.google.firebase:firebase-core:17.2.1")
+//    implementation ("com.android.support:multidex:1.0.3")
+    implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")

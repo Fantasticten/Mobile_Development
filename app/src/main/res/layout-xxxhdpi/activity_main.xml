@@ -18,15 +18,14 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomBar"
+            android:backgroundTint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottombar"
             app:itemIconTint="@color/hijau"
+            app:itemActiveIndicatorStyle="@color/white"
             app:itemTextColor="@color/hijau"
-            app:backgroundTint="@color/white"
-            app:itemBackground="@color/white"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"/>
 
