@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
+
                 R.id.home -> replaceFragment(HomeFragment())
                 R.id.jadwal -> replaceFragment(JadwalFragment())
                 R.id.notifikasi -> replaceFragment(NotifikasiFragment())
