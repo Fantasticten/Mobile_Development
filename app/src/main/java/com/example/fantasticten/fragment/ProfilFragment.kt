@@ -24,6 +24,7 @@ import com.example.fantasticten.RiwayatActivity
 import com.example.fantasticten.Splash
 import com.example.fantasticten.Tentangapk
 import com.example.fantasticten.edit_katasandi
+import com.example.fantasticten.login
 
 
 class ProfilFragment : Fragment() {
@@ -86,7 +87,7 @@ class ProfilFragment : Fragment() {
         view.text = message
 
         btyes.setOnClickListener {
-            val intent = Intent(activity, Splash::class.java)
+            val intent = Intent(activity, login::class.java)
             startActivity(intent)
 
             requireActivity().finishAffinity()

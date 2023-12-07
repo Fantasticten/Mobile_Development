@@ -1,12 +1,16 @@
 package com.example.fantasticten.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
@@ -18,6 +22,13 @@ import com.example.fantasticten.R
 import com.example.fantasticten.adapter.iklan_adapter
 import com.example.fantasticten.home_feature.*
 import com.example.fantasticten.iklan_item
+import com.example.fantasticten.view_model.LoginActivityViewModel
+import androidx.fragment.app.viewModels
+import com.example.fantasticten.MainActivity
+import com.example.fantasticten.login
+import com.example.fantasticten.view_model.RegisterActivityViewModel
+
+import kotlin.math.log
 
 class HomeFragment : Fragment() {
     private lateinit var newsarrayList: ArrayList<iklan_item>
@@ -26,6 +37,15 @@ class HomeFragment : Fragment() {
     lateinit var imageid :Array<Int>
     lateinit var tulis :Array<String>
     lateinit var iklan2 :Array<String>
+
+    private lateinit var namaUser: TextView
+    private lateinit var mViewModel: RegisterActivityViewModel
+
+    private lateinit var loginViewModel: LoginActivityViewModel
+    private lateinit var mViewModel2: LoginActivityViewModel
+
+//    private val loginActivityViewModel: LoginActivityViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +62,7 @@ class HomeFragment : Fragment() {
         val dokter = next.findViewById<ImageButton>(R.id.doktor)
         val lokasi = next.findViewById<ImageButton>(R.id.lokasi)
         val imageList = ArrayList<SlideModel>()
+        namaUser = next.findViewById(R.id.namaUser)
 
         imageList.add(SlideModel(R.drawable.slide1))
         imageList.add(SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUDsuqzb99RjFg0oi-3fWH5D0Dz2Q82Y2GDg&usqp=CAU"))
@@ -77,10 +98,40 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        mViewModel2 = ViewModelProvider(this).get(LoginActivityViewModel::class.java)
 
+        setUpObservers()
+
+//        var userNamanya = mViewModel2.getUser().value
+//        namaUser.text = userNamanya?.username ?: "Data User Error"
 
 
         return next
+    }
+
+
+    private fun setUpObservers() {
+        // Use mViewModel2 here to observe data or perform other actions
+        mViewModel2.getUserLiveData().observe(viewLifecycleOwner) { user ->
+            Log.d("HomeFragment", "User data changed: $user")
+            namaUser.text = user.username
+        }
+    }
+
+    private fun setUpRecyclerView(view: View) {
+        recyclerView = view.findViewById(R.id.recyle2)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.setHasFixedSize(true)
+
+        setdataList()
+        iklanAdapter = iklan_adapter(newsarrayList)
+        recyclerView.adapter = iklanAdapter
+
+        iklanAdapter.setOnItemClickListener(object : iklan_adapter.OnItemClickListener {
+            override fun onItemClick(artikelId: String) {
+                startDetailActivity(artikelId)
+            }
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

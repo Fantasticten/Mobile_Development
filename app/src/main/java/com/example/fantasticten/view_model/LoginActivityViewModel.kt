@@ -9,6 +9,7 @@ import com.example.fantasticten.data.AuthResponse
 import com.example.fantasticten.data.LoginBody
 import com.example.fantasticten.data.User
 import com.example.fantasticten.repository.AuthRepository
+import com.example.fantasticten.utils.APIService
 import com.example.fantasticten.utils.AuthToken
 import com.example.fantasticten.utils.RequestStatus
 import kotlinx.coroutines.launch
@@ -29,6 +30,11 @@ class LoginActivityViewModel(val authRepository: AuthRepository, val application
 
     fun getUserLiveData(): LiveData<User> = userLiveData
 
+    constructor() : this(AuthRepository(APIService.getService()), Application())
+
+    private val _userState: MutableLiveData<User?> = MutableLiveData()
+    val userState: LiveData<User?> get() = _userState
+
     fun loginUser(body: LoginBody) {
         viewModelScope.launch {
             authRepository.loginUser(body).collect {
@@ -38,7 +44,9 @@ class LoginActivityViewModel(val authRepository: AuthRepository, val application
                     }
                     is RequestStatus.Success -> {
                         isLoading.value = false
+                        _userState.value = it.data.user
                         user.value = it.data.user
+                        userLiveData.value = it.data.user
                         AuthToken.getInstance(application.baseContext).token = it.data.token
                     }
                     is RequestStatus.Error -> {

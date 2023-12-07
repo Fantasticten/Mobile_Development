@@ -107,12 +107,17 @@ class Register : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeLi
                 }
 
                 if (message.isNotEmpty()) {
-                    AlertDialog.Builder(this)
-                        .setIcon(R.drawable.info_24)
-                        .setTitle("INFORMATION")
-                        .setMessage(message)
-                        .setPositiveButton("OK") {dialog, _ -> dialog!!.dismiss()}
-                        .show()
+                    mBinding.textInputLayoutEmail.apply {
+                        if (isErrorEnabled) isErrorEnabled = false
+                        setStartIconDrawable(R.drawable.check_circle_24)
+                        setStartIconTintList(ColorStateList.valueOf(Color.GREEN))
+                    }
+//                    AlertDialog.Builder(this)
+//                        .setIcon(R.drawable.info_24)
+//                        .setTitle("INFORMATION")
+//                        .setMessage(message)
+//                        .setPositiveButton("OK") {dialog, _ -> dialog!!.dismiss()}
+//                        .show()
                 }
             }
         }
