@@ -7,6 +7,6 @@ import com.example.fantasticten.R
 class Treatment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_treatment)
+        setContentView(R.layout.isi_tratment)
     }
 }

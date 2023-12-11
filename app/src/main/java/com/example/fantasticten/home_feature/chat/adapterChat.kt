@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fantasticten.R
-import com.example.fantasticten.adapter.iklan_adapter
+
 
 //class adapterChat(private val cont : Context,val layoutid : Int ,val  clist: List<mobileChat>):ArrayAdapter<mobileChat>
 //    (cont,layoutid,clist) {

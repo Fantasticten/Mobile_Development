@@ -7,7 +7,7 @@
         android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home_feature.Treatment">
+      >
 
     <androidx.cardview.widget.CardView
             android:background="@drawable/edit_background"

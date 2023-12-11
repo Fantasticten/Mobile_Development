@@ -1,5 +1,7 @@
 package com.example.fantasticten.utils
 
+import com.example.fantasticten.data.ArtikelData
+import com.example.fantasticten.data.ArtikelResponse
 import com.example.fantasticten.data.RegisterBody
 import com.example.fantasticten.data.AuthResponse
 import com.example.fantasticten.data.Doctor
@@ -12,6 +14,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface APIComsumer {
@@ -27,7 +30,10 @@ interface APIComsumer {
     suspend fun getDoctors(): Response<DoctorResponse>
     @GET("api/program")
     suspend fun getPrograms(): Response<ProgramResponse>
-
+    @GET("api/artic")
+    suspend fun getartic(): Response<ArtikelResponse>
+    @GET("api/artic/{id}")
+    suspend fun getDetailArtikel(@Path("id") artikelId: String): Response<ArtikelData>
 
 
 }
