@@ -1,7 +1,9 @@
 package com.example.fantasticten.fragment
 
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -28,12 +30,21 @@ import com.example.fantasticten.login
 
 
 class ProfilFragment : Fragment() {
+
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_profil, container, false)
+
+        sharedPreferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        val namaUser = view.findViewById<TextView>(R.id.namaUser)
+        val username = sharedPreferences.getString("username", "")
+
+        namaUser.text = "$username"
 
         val edtprofil = view.findViewById<RelativeLayout>(R.id.EdtProfile)
         edtprofil.setOnClickListener {
@@ -68,9 +79,9 @@ class ProfilFragment : Fragment() {
         val btnKeluar = view.findViewById<RelativeLayout>(R.id.keluarr)
         btnKeluar.setOnClickListener {
             val message: String? = "Apakah kamu yakin Ingin Keluar.?"
-
             showCustomDialog(message)
         }
+
 
         return view
     }
@@ -87,18 +98,26 @@ class ProfilFragment : Fragment() {
         view.text = message
 
         btyes.setOnClickListener {
-            val intent = Intent(activity, login::class.java)
-            startActivity(intent)
-
-            requireActivity().finishAffinity()
+            logoutUser()
         }
-
 
         closeButton.setOnClickListener {
             dialog.dismiss()
         }
 
         dialog.show()
+    }
+
+    private fun logoutUser() {
+
+        val sharedPreferences = requireActivity().getSharedPreferences("LoginStatus", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isLoggedIn", false)
+        editor.apply()
+
+        val intent = Intent(requireActivity(), login::class.java)
+        startActivity(intent)
+        requireActivity().finishAffinity()
     }
 
 }

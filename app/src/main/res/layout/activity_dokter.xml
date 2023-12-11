@@ -49,31 +49,30 @@
             tools:layout_editor_absoluteX="24dp"
             app:layout_constraintTop_toBottomOf="@+id/cardview133">
 
-        <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:srcCompat="@drawable/dokter_cycle"
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/imageViewdokter"/>
         <TextView
                 android:layout_marginStart="20dp"
                 android:textSize="16dp"
-                android:text="Drg.  Rima Yunita.R"
+                android:text=""
                 android:fontFamily="@font/inter_medium"
                 android:layout_toEndOf="@+id/imageViewdokter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView6"/>
+                android:id="@+id/namadokter"/>
         <TextView
                 android:textSize="15dp"
                 android:layout_marginStart="20dp"
                 android:text="Dokter GIgi Umum"
                 android:textColor="#9E9B9B"
                 android:fontFamily="@font/inter_medium"
-                android:layout_below="@+id/textView6"
+                android:layout_below="@+id/namadokter"
                 android:layout_toEndOf="@+id/imageViewdokter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView7"/>
+                android:id="@+id/spelesiasi"/>
     </RelativeLayout>
     <RelativeLayout
             android:layout_marginTop="20dp"
@@ -116,31 +115,22 @@
                 android:id="@+id/textView9"/>
         <TextView
                 android:fontFamily="@font/inter"
-                android:textSize="10dp"
+                android:textSize="12dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="Klinik Gigi, Kota Pariaman, Padang"
                 android:layout_below="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView10"/>
-        <TextView
-                android:fontFamily="@font/inter"
-                android:textSize="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:text="Sumatera Barat"
-                android:layout_below="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView11"/>
+                android:id="@+id/infoklinik"/>
+
         <TextView
                 android:fontFamily="@font/inter_bold"
                 android:textSize="12dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="Jadwal Praktek"
-                android:layout_below="@+id/textView11"
+                android:layout_below="@+id/infoklinik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView12"/>
@@ -153,6 +143,6 @@
                 android:layout_below="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView13"/>
+                android:id="@+id/jadwal_praktek"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,18 +6,20 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.fantasticten.R
+import com.example.fantasticten.data.ProgramData
 import com.example.fantasticten.grid_item
 import java.security.AccessControlContext
 
-class grid_adapter (var context: Context, var  arrayList: ArrayList<grid_item>): BaseAdapter(){
+class grid_adapter (var context: Context, var arrayList: ArrayList<ProgramData>): BaseAdapter() {
+
     override fun getCount(): Int {
         return arrayList.size
 
     }
-
     override fun getItem(position: Int): Any {
-        return arrayList.get(position)
+        return arrayList[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -25,16 +27,20 @@ class grid_adapter (var context: Context, var  arrayList: ArrayList<grid_item>):
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view:View = View.inflate(context,R.layout.grid_item,null)
+        val view: View = View.inflate(context, R.layout.grid_item, null)
 
-        var icon :ImageView = view.findViewById(R.id.imageViewprogram)
-        var text :TextView = view.findViewById(R.id.textViewpageprogram)
-        var  gridItem : grid_item = arrayList.get(position)
-        icon.setImageResource(gridItem.gambar!!)
-        text.text= gridItem.name
+        val icon: ImageView = view.findViewById(R.id.imageViewprogram)
+        val text: TextView = view.findViewById(R.id.textViewpageprogram)
+        val programItem: ProgramData = arrayList[position]
+
+        Glide.with(context)
+            .load("https://keydentalcare.isepwebtim.my.id/img/${programItem.thumbnail}")
+            .placeholder(R.drawable.program)
+            .error(R.drawable.program)
+            .into(icon)
+
+        text.text = programItem.harga_program
 
         return view
     }
-
-
 }

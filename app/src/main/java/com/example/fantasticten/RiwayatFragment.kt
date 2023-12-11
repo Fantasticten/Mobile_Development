@@ -1,10 +1,13 @@
 package com.example.fantasticten
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,9 +42,14 @@ class RiwayatFragment : Fragment() {
         return view
     }
 
+
     private fun fetchData() {
+        val sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        val userId = sharedPreferences.getInt("user_id", 1)
+
+
         val service = APIService.getService()
-        val call = service.getPatientHistory(1) // Ganti 1 dengan ID yang sesuai
+        val call = service.getPatientHistory(userId)
 
         call.enqueue(object : Callback<ResponseRiwayat> {
             override fun onResponse(call: Call<ResponseRiwayat>, response: Response<ResponseRiwayat>) {
@@ -50,19 +58,16 @@ class RiwayatFragment : Fragment() {
 
                     Log.d("RiwayatFragment", "Data from API: $data")
 
-                    adapter.setData(data.filterNotNull()) // Pastikan method setData di dalam adapter disesuaikan
+                    adapter.setData(data.filterNotNull())
                 } else {
-                    // Handle unsuccessful response
                     Log.e("RiwayatFragment", "Unsuccessful API response: ${response.code()}")
                 }
             }
 
-
             override fun onFailure(call: Call<ResponseRiwayat>, t: Throwable) {
                 Log.e("RiwayatFragment", "API Call Failed: ${t.message}", t)
-                // Handle network request failure
             }
         })
-
     }
+
 }

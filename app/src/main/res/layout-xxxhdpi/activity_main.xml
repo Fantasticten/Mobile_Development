@@ -19,8 +19,9 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomBar"
             android:backgroundTint="@color/white"
+            android:background="@drawable/top_border"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="73dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottombar"
             app:itemIconTint="@color/hijau"
