@@ -16,186 +16,285 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
-            android:id="@+id/relativeLayout4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            android:background="@color/hijau" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview3"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints">
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:cardCornerRadius="@dimen/_10sdp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="91dp"
-                android:background="@color/hijau" />
-
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/_50sdp"
-                app:cardCornerRadius="@dimen/_10sdp">
+                android:padding="@dimen/_10sdp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="13dp">
 
-                    <ImageView
-                        android:src="@drawable/potoprofil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/imageView"/>
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/potoprofil" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:text=""
+                    android:textSize="@dimen/_16sdp" />
 
-                        <TextView
-                            android:id="@+id/textView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_toEndOf="@+id/imageView"
-                            android:text="Diana Cantika Dewi"
-                            android:textColor="@color/black"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
-                            tools:ignore="RtlCompat" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_toEndOf="@+id/imageView"
-                            android:text="dianacan16@gmail.com"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            tools:ignore="RtlCompat" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/namaUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/textView"
+                    android:text="Diana Cantika Dewi"
+                    android:textSize="@dimen/_16sdp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
         <ScrollView
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/relativeLayout4"
+            android:layout_below="@+id/cardview3"
             android:layout_marginBottom="73dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="@dimen/_5sdp"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            >
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:padding="@dimen/_5sdp"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+
+                        <RelativeLayout
+                            android:id="@+id/EdtProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/editProfileIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pprofile" />
+
+                            <TextView
+                                android:id="@+id/editProfileText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="60dp"
+                                android:text="Edit Profile"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/editProfileArrow"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/pchervon" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/RytKunjungan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/editProfileIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/prwayat" />
+
+                            <TextView
+                                android:id="@+id/riwayatKunjunganText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="60dp"
+                                android:text="Riwayat Kunjungan"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/riwayatKunjunganArrow"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/pchervon" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/RkmMedis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/editProfileIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/perekam" />
+
+                            <TextView
+                                android:id="@+id/rekamMedisText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="60dp"
+                                android:text="Rekam Medis"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/rekamMedisArrow"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/pchervon" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/EdtKataSandi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/editProfileIcon4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/psandi" />
+
+                            <TextView
+                                android:id="@+id/editPasswordText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="60dp"
+                                android:text="Edit Kata Sandi"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/editPasswordArrow"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/pchervon" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="24dp"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView">
 
 
-                    <RelativeLayout
-                        android:id="@+id/EdtProfile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/editProfileIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/pprofile" />
-
-                        <TextView
-                            android:id="@+id/editProfileText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="60dp"
-                            android:text="Edit Profile"
-                            android:textSize="18sp" />
-
-                        <ImageView
-                            android:id="@+id/editProfileArrow"
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/pchervon" />
-
-                    </RelativeLayout>
 
                     <RelativeLayout
-                        android:id="@+id/RytKunjungan"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/edtPstBantuan"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp">
+                        android:padding="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/profileshape">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/editProfileIcon2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/prwayat" />
+                            android:id="@+id/editProw5"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/pbantuan" />
 
                         <TextView
-                            android:id="@+id/riwayatKunjunganText"
+                            android:id="@+id/editProfileText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="60dp"
-                            android:text="Riwayat Kunjungan"
+                            android:text="Pusat Bantuan"
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/riwayatKunjunganArrow"
+                            android:id="@+id/editProfileArrow3"
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
                             android:src="@drawable/pchervon" />
 
                     </RelativeLayout>
+
+
 
 
                     <RelativeLayout
-                        android:id="@+id/RkmMedis"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/pttentang"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp">
+                        android:padding="16dp"
+                        android:background="@drawable/profileshape"
+                        android:layout_marginBottom="16dp">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/editProfileIcon3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/perekam" />
+                            android:id="@+id/tntngicon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/pinfo" />
 
                         <TextView
-                            android:id="@+id/rekamMedisText"
+                            android:id="@+id/riwayatKunjunganText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="60dp"
-                            android:text="Rekam Medis"
+                            android:text="Tentang"
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/rekamMedisArrow"
+                            android:id="@+id/riwayatKunjunganArrow2"
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_alignParentEnd="true"
@@ -203,31 +302,35 @@
                             android:src="@drawable/pchervon" />
 
                     </RelativeLayout>
+
+
 
 
                     <RelativeLayout
-                        android:id="@+id/EdtKataSandi"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/keluarr"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp">
+                        android:padding="16dp"
+                        android:background="@drawable/profileshape"
+                        android:layout_marginBottom="16dp">
 
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/editProfileIcon4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/psandi" />
+                            android:id="@+id/rekamMedisIcon"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/pkeluar" />
 
                         <TextView
-                            android:id="@+id/editPasswordText"
+                            android:id="@+id/rekamMedisText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="60dp"
-                            android:text="Edit Kata Sandi"
+                            android:text="Keluar"
                             android:textSize="18sp" />
 
                         <ImageView
-                            android:id="@+id/editPasswordArrow"
+                            android:id="@+id/rekamMedisArrow2"
                             android:layout_width="16dp"
                             android:layout_height="16dp"
                             android:layout_alignParentEnd="true"
@@ -235,131 +338,11 @@
                             android:src="@drawable/pchervon" />
 
                     </RelativeLayout>
+
+
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-
-
-                <RelativeLayout
-                    android:id="@+id/edtPstBantuan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/profileshape">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/editProw5"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/pbantuan" />
-
-                    <TextView
-                        android:id="@+id/editProfileText2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="60dp"
-                        android:text="Pusat Bantuan"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/editProfileArrow3"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/pchervon" />
-
-                </RelativeLayout>
-
-
-
-
-                <RelativeLayout
-                    android:id="@+id/pttentang"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:background="@drawable/profileshape"
-                    android:layout_marginBottom="16dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/tntngicon"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/pinfo" />
-
-                    <TextView
-                        android:id="@+id/riwayatKunjunganText2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="60dp"
-                        android:text="Tentang"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/riwayatKunjunganArrow2"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/pchervon" />
-
-                </RelativeLayout>
-
-
-
-
-                <RelativeLayout
-                    android:id="@+id/keluarr"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:background="@drawable/profileshape"
-                    android:layout_marginBottom="16dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/rekamMedisIcon"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/pkeluar" />
-
-                    <TextView
-                        android:id="@+id/rekamMedisText2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="60dp"
-                        android:text="Keluar"
-                        android:textSize="18sp" />
-
-                    <ImageView
-                        android:id="@+id/rekamMedisArrow2"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/pchervon" />
-
-                </RelativeLayout>
-
-
-
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </RelativeLayout>
 

@@ -19,13 +19,13 @@
                 android:id="@+id/cardview"
                 android:layout_marginTop="@dimen/_50sdp"
                 android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
+                android:layout_width="330dp"
                 app:cardCornerRadius="@dimen/_10sdp"
                 android:layout_height="wrap_content">
             <RelativeLayout
 
                     android:padding="@dimen/_10sdp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="330dp"
                     android:layout_height="wrap_content">
 
 
@@ -48,7 +48,7 @@
                         android:layout_toEndOf="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView2"/>
+                        android:id="@+id/namaUser"/>
             </RelativeLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

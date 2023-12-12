@@ -3,8 +3,6 @@ package com.example.fantasticten
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.ColorStateList
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,12 +10,10 @@ import android.util.Patterns
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
-import com.example.fantasticten.data.AuthResponse
 import com.example.fantasticten.data.LoginBody
 import com.example.fantasticten.data.ValidateEmailBody
 import com.example.fantasticten.databinding.ActivityLoginBinding
@@ -63,6 +59,14 @@ class login : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListe
             startActivity(Intent(this, Lupa_Sandi::class.java))
         }
 
+        mViewModel.getUser().observe(this) { user ->
+            user?.let {
+                val coba = "Username: ${it.username}, Email: ${it.email}"
+                Log.d("LoginActivity", "Data from API: $coba")
+                Log.d("LoginActivity", "id: ${it.id}")
+            }
+        }
+
     }
 
     private fun setUpObservers() {
@@ -106,14 +110,44 @@ class login : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListe
             }
         }
 
-        mViewModel.getUser().observe(this) {
-            if (it != null) {
-                userViewModel.setUser(it)
+        mViewModel.getUser().observe(this) { user ->
+            if (user != null) {
+                userViewModel.setUser(user)
+
+                saveLoginDataToSharedPreferences(
+                    user.id,
+                    user.username,
+                    user.email,
+                    user.phone_number,
+                    "<token_here>"
+                )
+
+                saveLoginStatus(true)
+
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             } else {
                 Log.d("LoginActivity", "User data is null")
             }
         }
+    }
+
+    private fun saveLoginDataToSharedPreferences(userId: Int, username: String, email: String, phoneNumber: String, token: String) {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putInt("user_id", userId)
+        editor.putString("username", username)
+        editor.putString("email", email)
+        editor.putString("phone_number", phoneNumber)
+        editor.putString("token", token)
+        editor.apply()
+    }
+
+    private fun saveLoginStatus(status: Boolean) {
+        val sharedPreferences = getSharedPreferences("LoginStatus", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isLoggedIn", status)
+        editor.apply()
     }
 
     private fun validateEmail(shouldUpdateView: Boolean = true): Boolean {

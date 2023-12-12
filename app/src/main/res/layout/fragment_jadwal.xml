@@ -54,7 +54,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/textView"
+                                android:id="@+id/namaUserJa"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -66,6 +66,7 @@
                                 tools:ignore="RtlCompat" />
 
                             <TextView
+                                android:id="@+id/emailUser"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -91,39 +92,58 @@
             android:layout_marginRight="28dp"
             android:layout_marginTop="25dp">
 
-            <TextView
-                android:id="@+id/judulJad"
-                android:layout_width="wrap_content"
+
+
+            <RelativeLayout
+                android:paddingBottom="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/bgcardhome"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Data Kunjungan dan Riwayat"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+                app:layout_constraintHorizontal_bias="0.4">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <TextView
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="15sp"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/bkg_tab"
-                    android:orientation="vertical">
-                    <com.google.android.material.tabs.TabLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:id="@+id/tab_layout"
-                        android:background="@drawable/bkg_tab_jud"
-                        app:layout_constraintVertical_bias="0"
-                        tools:ignore="MissingConstraints" />
+                    android:layout_marginBottom="20dp"
+                    android:text=" Jadwal Kunjungan Kamu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"/>
+                <View
+                    android:id="@+id/sparator"
+                    android:layout_below="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black"/>
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:textSize="12sp"
+                    android:id="@+id/kunjunganText"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_below="@+id/sparator"
+                    android:text="Rabu, 15 November 2023, di klinik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
 
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:layout_marginTop="-1dp"
-                        android:padding="10dp"
-                        android:id="@+id/view_pager"
-                        android:background="@drawable/bkg_tab_view"
-                        tools:ignore="MissingConstraints"
-                        app:layout_constraintVertical_bias="0"/>
-                </LinearLayout>
+
+                <TextView
+                    android:fontFamily="@font/inter"
+                    android:textSize="14sp"
+                    android:id="@+id/pukulRiwayat"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:text="Pukul 16.00 WIB"
+                    android:layout_below="@+id/kunjunganText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </RelativeLayout>
 
         </LinearLayout>
 

@@ -39,7 +39,6 @@ class grid_adapter (var context: Context, var arrayList: ArrayList<ProgramData>)
             .error(R.drawable.program)
             .into(icon)
 
-//        text.text = programItem.nama_program
         text.text = programItem.harga_program
 
         return view

@@ -15,45 +15,76 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/relativeLayout3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:ignore="MissingConstraints">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="85dp"
-                    android:background="@color/hijau" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="350dp"
-                    android:layout_height="70dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="40dp"
-                    app:cardCornerRadius="9dp">
+                <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="@dimen/_10sdp">
+                        android:layout_height="91dp"
+                        android:background="@color/hijau" />
 
-                        <TextView
-                            android:id="@+id/textView"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="330dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        app:cardCornerRadius="@dimen/_10sdp">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_toEndOf="@+id/imageView"
-                            android:text="Nomor Antrian Kamu"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="20dp"
-                            android:textStyle="bold"
-                            tools:ignore="RtlCompat" />
+                            android:layout_height="match_parent"
+                            android:padding="13dp">
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </RelativeLayout>
+                            <ImageView
+                                android:src="@drawable/potoprofil"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/imageView"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/namaUserJa"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_toEndOf="@+id/imageView"
+                                    android:text="Diana Cantika Dewi"
+                                    android:textColor="@color/black"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    tools:ignore="RtlCompat" />
+
+                                <TextView
+                                    android:id="@+id/emailUser"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_toEndOf="@+id/imageView"
+                                    android:text="dianacan16@gmail.com"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    tools:ignore="RtlCompat" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 

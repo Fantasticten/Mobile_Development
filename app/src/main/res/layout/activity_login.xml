@@ -125,8 +125,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:textColor="@color/black"
             android:text="Lupa Kata Sandi ? "
-            android:textSize="20dp" />
+            android:textSize="18dp" />
 
         <Button
             android:id="@+id/masukAkun"
@@ -149,6 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sudah Punya Akun? "
+                android:textColor="@color/black"
                 android:textAlignment="center"
                 android:textSize="20dp" />
 

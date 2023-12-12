@@ -1,14 +1,22 @@
 package com.example.fantasticten.fragment
 
 
+import android.app.Application
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+
 import android.widget.Toast
+
+import android.widget.TextView
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.ImageSlider
@@ -27,6 +35,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+
 class HomeFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -35,6 +44,9 @@ class HomeFragment : Fragment() {
     lateinit var imageid :Array<Int>
     lateinit var tulis :Array<String>
     lateinit var iklan2 :Array<String>
+
+    private lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +63,17 @@ class HomeFragment : Fragment() {
         val dokter = next.findViewById<ImageButton>(R.id.doktor)
         val lokasi = next.findViewById<ImageButton>(R.id.lokasi)
         val imageList = ArrayList<SlideModel>()
+
+
+        sharedPreferences = requireActivity().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        val namaUser = next.findViewById<TextView>(R.id.namaUser)
+        val username = sharedPreferences.getString("username", "")
+        val userId = sharedPreferences.getInt("user_id", 1)
+        val email = sharedPreferences.getString("email", "")
+        val phoneNumber = sharedPreferences.getString("phone_number", "")
+        val token = sharedPreferences.getString("token", "")
+
+        namaUser.text = "$username"
 
 
         imageList.add(SlideModel(R.drawable.slide1))
@@ -87,9 +110,6 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-
-
-
         return next
     }
     private var artikelList: MutableList<ArtikelData> = mutableListOf()
@@ -115,6 +135,7 @@ class HomeFragment : Fragment() {
     }
 
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -133,6 +154,7 @@ class HomeFragment : Fragment() {
 
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+
     }
 
     private fun startDetailActivity(artikelId: String) {

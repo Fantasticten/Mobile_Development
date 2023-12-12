@@ -114,6 +114,7 @@
                 android:padding="16dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:background="@drawable/profileshape"
                     android:id="@+id/editProw"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
