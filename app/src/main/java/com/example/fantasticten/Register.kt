@@ -124,7 +124,7 @@ class Register : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeLi
 
         mViewModel.getUser().observe(this) {
             if (it != null) {
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, login::class.java))
             }
         }
     }
