@@ -26,9 +26,19 @@ import com.example.fantasticten.R
 //
 //        return view
 //    }}
-class adapterChat(private val  clist: ArrayList<mobileChat>):RecyclerView.Adapter<adapterChat.MyViewHolder>()
+class adapterChat(private val  clist: List<mobileChat>):RecyclerView.Adapter<adapterChat.MyViewHolder>()
      {
 
+
+//         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+//        val layoutInflater :LayoutInflater = LayoutInflater.from(this.context)
+//        var view:View = layoutInflater.inflate(layoutid,null)
+//        var text : TextView = view.findViewById(R.id.textView18)
+//        var  mobileChat  = clist.get(position)
+//        text.text= mobileChat.chatMobile
+//
+//        return view
+//    }
 
          override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
              val itemView = LayoutInflater.from(parent.context).inflate(R.layout.chat_right,parent,false)

@@ -20,11 +20,10 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomBar"
+        app:itemIconSize="25dp"
             app:itemActiveIndicatorStyle="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:itemIconTint="@color/hijau"
-            app:itemTextColor="@color/hijau"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/bottombar"
             tools:ignore="MissingConstraints" app:layout_constraintTop_toBottomOf="@+id/frameLayout"
