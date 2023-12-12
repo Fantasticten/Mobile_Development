@@ -1,8 +1,10 @@
 package com.example.fantasticten.utils
 
+import com.example.fantasticten.data.ArtikelData
+import com.example.fantasticten.data.ArtikelResponse
 import com.example.fantasticten.data.RegisterBody
 import com.example.fantasticten.data.AuthResponse
-import com.example.fantasticten.data.Doctor
+
 import com.example.fantasticten.data.DoctorResponse
 import com.example.fantasticten.data.LoginBody
 
@@ -22,7 +24,6 @@ import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-
 interface APIComsumer {
     @POST("api/auth/validate-unique-email")
     suspend fun validateEmailAddress(@Body body: ValidateEmailBody): Response<UniqueEmailValidationResponse>
@@ -37,8 +38,15 @@ interface APIComsumer {
     @GET("api/program")
     suspend fun getPrograms(): Response<ProgramResponse>
 
+    @GET("api/artic")
+    suspend fun getartic(): Response<ArtikelResponse>
+    @GET("api/artic/{id}")
+    suspend fun getDetailArtikel(@Path("id") artikelId: String): Response<ArtikelData>
+
+
     @POST("/api/queue")
     fun addQueue(@Body queueData: QueueData): Call<Void>
+
 
 
     @Headers("Content-Type: application/json")

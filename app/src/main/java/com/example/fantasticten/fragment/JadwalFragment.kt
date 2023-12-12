@@ -36,28 +36,28 @@ class JadwalFragment : Fragment(R.layout.fragment_jadwal) {
         namaUser.text = "$username"
         emailUser.text = "$email"
 
-        binding.tabLayout.apply {
-            addTab(newTab().setText("Kunjungan"))
-            addTab(newTab().setText("Riwayat"))
-            addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-                override fun onTabSelected(tab: TabLayout.Tab) {
-                    binding.viewPager.currentItem = tab.position
-                }
-
-                override fun onTabUnselected(tab: TabLayout.Tab) {}
-                override fun onTabReselected(tab: TabLayout.Tab) {}
-            })
-        }
-
-        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
-            }
-        })
-
-        val fragmentManager = requireActivity().supportFragmentManager
-        adapter = ViewPagerAdapter(fragmentManager, viewLifecycleOwner.lifecycle)
-        binding.viewPager.adapter = adapter
+//        binding.tabLayout.apply {
+//            addTab(newTab().setText("Kunjungan"))
+//            addTab(newTab().setText("Riwayat"))
+//            addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//                override fun onTabSelected(tab: TabLayout.Tab) {
+//                    binding.viewPager.currentItem = tab.position
+//                }
+//
+//                override fun onTabUnselected(tab: TabLayout.Tab) {}
+//                override fun onTabReselected(tab: TabLayout.Tab) {}
+//            })
+//        }
+//
+//        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//            override fun onPageSelected(position: Int) {
+//                binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
+//            }
+//        })
+//
+//        val fragmentManager = requireActivity().supportFragmentManager
+//        adapter = ViewPagerAdapter(fragmentManager, viewLifecycleOwner.lifecycle)
+//        binding.viewPager.adapter = adapter
     }
 
 }

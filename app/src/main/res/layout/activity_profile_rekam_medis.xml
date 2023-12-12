@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,6 +21,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="329dp"
             android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_16sdp"
             app:cardCornerRadius="@dimen/_10sdp">
@@ -53,7 +56,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="126dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">

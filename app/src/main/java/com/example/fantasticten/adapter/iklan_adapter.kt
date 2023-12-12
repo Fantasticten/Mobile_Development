@@ -1,71 +1,52 @@
+
 package com.example.fantasticten.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fantasticten.R
-import com.example.fantasticten.grid_item
-import com.example.fantasticten.iklan_item
+import com.example.fantasticten.data.ArtikelData
+import com.bumptech.glide.Glide
+import com.example.fantasticten.DetailArtikelActivity
 
-class iklan_adapter (private val newsList: ArrayList<iklan_item>): RecyclerView.Adapter<iklan_adapter.MyViewHolder>(){
+class ArtikelAdapter(private val context: Context, private val artikelList: List<ArtikelData>) :
+    RecyclerView.Adapter<ArtikelAdapter.ArtikelViewHolder>() {
 
-    interface OnItemClickListener {
-        fun onItemClick(artikelId: String)
+    inner class ArtikelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imageView: ImageView = itemView.findViewById(R.id.imageViewiklan)
+        val textViewTitle: TextView = itemView.findViewById(R.id.textView16)
     }
 
-    private var listener: OnItemClickListener? = null
-
-    fun setOnItemClickListener(clickListener: OnItemClickListener) {
-        listener = clickListener
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtikelViewHolder {
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.iklan_item, parent, false)
+        return ArtikelViewHolder(itemView)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): iklan_adapter.MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.iklan_item,parent,false)
-        return MyViewHolder(itemView)
-    }
+    override fun onBindViewHolder(holder: ArtikelViewHolder, position: Int) {
+        val currentItem = artikelList[position]
 
-    override fun onBindViewHolder(holder: iklan_adapter.MyViewHolder, position: Int) {
-        val curentitem = newsList[position]
-        holder.image.setImageResource(curentitem.gambar)
-        holder.tulis.text = curentitem.tulis
+        Glide.with(context)
+            .load("https://keydentalcare.isepwebtim.my.id/img/${currentItem.gambar_artikel}")
+            .placeholder(R.drawable.artikel2) // Ganti dengan placeholder yang sesuai
+            .error(R.drawable.artikel2)
+            .into(holder.imageView)
+
+        holder.textViewTitle.text = currentItem.judul_artikel
 
         holder.itemView.setOnClickListener {
-            listener?.onItemClick(curentitem.id.toString())
+            val intent = Intent(context, DetailArtikelActivity::class.java)
+            intent.putExtra("artikel_id", currentItem.id)
+            context.startActivity(intent)
         }
-
-        holder.itemView.tag = curentitem.id
-
-    }
-
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
     }
 
     override fun getItemCount(): Int {
-        return newsList.size
+        return artikelList.size
     }
-    inner class MyViewHolder (itemView: View) :RecyclerView.ViewHolder(itemView){
-        val image : ImageView = itemView.findViewById(R.id.imageViewiklan)
-        val tulis : TextView = itemView.findViewById(R.id.textView16)
-
-        init {
-            itemView.setOnClickListener {
-                val position = adapterPosition
-                if (position != RecyclerView.NO_POSITION) {
-                    val artikelId = newsList[position].id
-                    listener?.onItemClick(artikelId.toString())
-                }
-            }
-        }
-
-    }
-
-
-
 }

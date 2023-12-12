@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dropdown">Pelayanan</string>
     <string name="lupasandi"><u>Lupa Kata Sandi?.</u></string>
-<string name="artikel">Orang tua harus tau bagaimana cara mencegah gigi
+    <string name="artikel">Orang tua harus tau bagaimana cara mencegah gigi
 berlubang pada anak-anak dan merawat nya sejak dini.
 Hal ini penting karena semenjak memasuki usia balita,
 anak-anak mulai rentan mengalami gigi berlubang.
@@ -51,7 +51,7 @@ mencegah gigi berlubang pada anak-anak
      dapat terjadi ketika ia lalai menyikat gigi.\n
 
 </string>
-<string name="artikel2">Setiap orang dewasa mempunyai 32 buah gigi permanen. Semakin bertambah usia , risiki masalah
+    <string name="artikel2">Setiap orang dewasa mempunyai 32 buah gigi permanen. Semakin bertambah usia , risiki masalah
 gigi juga semakin mennjadi, contoh nya mulai dari
 infeksi, gigi berlubang, hingga gigi copot.
 Salah satu penyebab gigi copot pada orang dewasa
@@ -99,7 +99,7 @@ melakukan aktivitas. Misalnya, saat berolahraga dan
 berkendaraan. Jika gigi kamu copot lakukanlah hal
 diatas untuk mengatasinya\n
 </string>
-<string name="artikel3">Gigi mempunyai pori-pori seperti kulit manusia, tetapi tidak dapat terlihat oleh mata. Zat warna dari makanan, minuman, atau asap rokok dapat menyerap
+    <string name="artikel3">Gigi mempunyai pori-pori seperti kulit manusia, tetapi tidak dapat terlihat oleh mata. Zat warna dari makanan, minuman, atau asap rokok dapat menyerap
 ke permukaan gigi melalui pori-pori tersebut dan menyebabkan gigi kuning. tingkat kekuningan gigi juga berbeda-beda setiap pada setiap orang.
 \n\n
     <b>Penyebab gigi menjadi kuning</b>
