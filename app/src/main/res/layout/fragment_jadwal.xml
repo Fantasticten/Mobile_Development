@@ -119,30 +119,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/black"/>
-                <TextView
-                    android:fontFamily="@font/inter"
-                    android:textSize="12sp"
-                    android:id="@+id/kunjunganText"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_below="@+id/sparator"
-                    android:text="Rabu, 15 November 2023, di klinik"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
 
-
-                <TextView
-                    android:fontFamily="@font/inter"
-                    android:textSize="14sp"
-                    android:id="@+id/pukulRiwayat"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="20dp"
-                    android:text="Pukul 16.00 WIB"
-                    android:layout_below="@+id/kunjunganText"
-                    android:layout_width="wrap_content"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="86dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp" />
             </RelativeLayout>
 
         </LinearLayout>
