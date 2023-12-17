@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dropdown">Pelayanan</string>
-    <string name="lupasandi"><u>Lupa Kata Sandi?.</u></string>
+    <string name="lupasandi"><b>Lupa Kata Sandi?.</b></string>
     <string name="artikel">Orang tua harus tau bagaimana cara mencegah gigi
 berlubang pada anak-anak dan merawat nya sejak dini.
 Hal ini penting karena semenjak memasuki usia balita,

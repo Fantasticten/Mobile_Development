@@ -1,16 +1,14 @@
 package com.example.fantasticten.home_feature.chat
 
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.ListView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.fantasticten.R
 import com.example.fantasticten.databinding.ActivityChatAktivityBinding
-import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -23,8 +21,11 @@ class ChatAktivity : AppCompatActivity() {
     private  var firebaseDatabase: FirebaseDatabase? = null
     private  var databaseReference: DatabaseReference?= null
     private lateinit var ref : DatabaseReference
+    private lateinit var ref1 : DatabaseReference
     private lateinit var cList : ArrayList<mobileChat>
+    private lateinit var cList1 : ArrayList<mobileChatLeft>
     private lateinit var adapterchat: adapterChat
+    private lateinit var adapterchat1: adapterChatLeft
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,18 @@ class ChatAktivity : AppCompatActivity() {
         recyclerView =findViewById(R.id.tampilchat)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
+        val recyc = LinearLayoutManager(applicationContext)
+        recyclerView.layoutManager = recyc
+        recyc.stackFromEnd=true
+
+
+        val galery =registerForActivityResult(ActivityResultContracts.GetContent(),
+            ActivityResultCallback {
+
+            })
+        binding.imageButton2.setOnClickListener{
+            galery.launch("image/*")
+        }
         ref = FirebaseDatabase.getInstance().getReference("mobile")
 
         cList = arrayListOf()
@@ -63,7 +76,10 @@ class ChatAktivity : AppCompatActivity() {
 
         }
 
+
     }
+
+
     private fun saveData(){
         val chatMobile = binding.editTextChat.text.toString().trim()
 
