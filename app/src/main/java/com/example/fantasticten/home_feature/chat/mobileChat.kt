@@ -1,10 +1,12 @@
 package com.example.fantasticten.home_feature.chat
 
 data class mobileChat(
-    val chatId :String?,
-    val chatMobile : String
+
+    val senderId: String?,
+    val chatMobile: String,
+    val chatImage: String
 ){
-    constructor(): this("", ""){
+    constructor(): this("","",""){
 
     }
 }

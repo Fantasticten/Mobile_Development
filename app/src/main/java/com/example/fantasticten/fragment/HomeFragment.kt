@@ -73,7 +73,12 @@ class HomeFragment : Fragment() {
         val phoneNumber = sharedPreferences.getString("phone_number", "")
         val token = sharedPreferences.getString("token", "")
 
-        namaUser.text = "$username"
+
+
+
+        val nama = shortenTitle("$username",20)
+        namaUser.text= nama
+
 
 
         imageList.add(SlideModel(R.drawable.slide1))
@@ -161,6 +166,14 @@ class HomeFragment : Fragment() {
         val intent = Intent(requireContext(), DetailArtikelActivity::class.java)
         intent.putExtra("ARTIKEL_ID", artikelId)
         startActivity(intent)
+    }
+    private fun shortenTitle(title: String, maxLength: Int): String {
+        return if (title.length > maxLength) {
+            val shortenedTitle = title.substring(0, maxLength - 3) + "..."
+            shortenedTitle
+        } else {
+            title
+        }
     }
 
 

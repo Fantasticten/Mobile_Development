@@ -1,54 +1,47 @@
 package com.example.fantasticten.home_feature.chat
 
 
-import android.annotation.SuppressLint
+
 import android.content.Context
+import android.content.SharedPreferences
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fantasticten.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 
 
-//class adapterChat(private val cont : Context,val layoutid : Int ,val  clist: List<mobileChat>):ArrayAdapter<mobileChat>
-//    (cont,layoutid,clist) {
-//
-//    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-//        val layoutInflater :LayoutInflater = LayoutInflater.from(this.context)
-//        var view:View = layoutInflater.inflate(layoutid,null)
-//        var text : TextView = view.findViewById(R.id.textView18)
-//        var  mobileChat  = clist.get(position)
-//        text.text= mobileChat.chatMobile
-//
-//        return view
-//    }}
-class adapterChat(private val  clist: List<mobileChat>):RecyclerView.Adapter<adapterChat.MyViewHolder>()
+class adapterChat(private val clist: List<mobileChat>):RecyclerView.Adapter<adapterChat.MyViewHolder>()
      {
-
-
-//         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-//        val layoutInflater :LayoutInflater = LayoutInflater.from(this.context)
-//        var view:View = layoutInflater.inflate(layoutid,null)
-//        var text : TextView = view.findViewById(R.id.textView18)
-//        var  mobileChat  = clist.get(position)
-//        text.text= mobileChat.chatMobile
-//
-//        return view
-//    }
-
+         private lateinit var sharedPreferences: SharedPreferences
+         var firebaseUser  = FirebaseUser.NULL
+         val messege_right= 0
+         val messege_left= 1
          override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-             val itemView = LayoutInflater.from(parent.context).inflate(R.layout.chat_right,parent,false)
-             return MyViewHolder(itemView)
+             if (viewType == messege_right) {
+                 val itemView =
+                     LayoutInflater.from(parent.context).inflate(R.layout.chat_right, parent, false)
+                 return MyViewHolder(itemView)
+             } else {
+                 val itemView = LayoutInflater.from(parent.context).inflate(R.layout.chat_left,parent,false)
+                 return MyViewHolder(itemView)
+             }
 
          }
 
          override fun onBindViewHolder(holder: adapterChat.MyViewHolder, position: Int) {
             val chatItem = clist[position]
              holder.chat.text= chatItem.chatMobile
+             val  byte = android.util.Base64.decode(chatItem.chatImage,android.util.Base64.DEFAULT)
+             val bitmap = BitmapFactory.decodeByteArray(byte,0,byte.size)
+             holder.chatImage.setImageBitmap(bitmap)
+
          }
 
          override fun getItemCount(): Int {
@@ -56,7 +49,17 @@ class adapterChat(private val  clist: List<mobileChat>):RecyclerView.Adapter<ada
          }
          class MyViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
              val chat : TextView = itemView.findViewById(R.id.textView18)
+             val chatImage : ImageView = itemView.findViewById(R.id.imageView5)
 
+
+         }
+
+         override fun getItemViewType(position: Int): Int {
+             if (clist[position].senderId == firebaseUser) {
+                 return messege_left
+             } else {
+                 return messege_right
+             }
 
          }
      }
