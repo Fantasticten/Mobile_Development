@@ -121,19 +121,19 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textViewEmail"
+                        android:id="@+id/textViewtanggal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tanggal Lahir"
                         android:textSize="15dp" />
 
                     <EditText
-                        android:id="@+id/editTextEmail"
+                        android:id="@+id/editTanggal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/edit_background"
-                        android:inputType="number"
+                        android:inputType="date"
                         android:padding="8dp"
                         android:textSize="20sp" />
 
@@ -146,21 +146,29 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textViewNoTlp"
+                        android:id="@+id/textViewkelamin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Jenis Kelamin"
                         android:textSize="15dp" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dropdonedit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="20sp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-                    <EditText
-                        android:id="@+id/editTextNoTlp"
+                    <AutoCompleteTextView
+                        android:id="@+id/editJenisKelamin"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/edit_background"
-                        android:inputType="text"
+                        android:inputType="none"
                         android:padding="8dp"
                         android:textSize="20sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -169,16 +177,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/etelepon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="No Telepon"
                         android:textSize="15dp" />
-
                     <EditText
-                        android:id="@+id/edtelepon"
+                        android:id="@+id/editTextNotelp"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
@@ -186,7 +192,6 @@
                         android:inputType="number"
                         android:padding="8dp"
                         android:textSize="20sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -194,14 +199,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/eemail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Email"
                         android:textSize="15dp" />
-
                     <EditText
                         android:id="@+id/edemail"
                         android:layout_width="match_parent"
@@ -211,23 +214,18 @@
                         android:inputType="textEmailAddress"
                         android:padding="8dp"
                         android:textSize="20sp" />
-
-
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/ealamat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Alamat"
                         android:textSize="15dp" />
-
                     <EditText
                         android:id="@+id/edalamat"
                         android:layout_width="match_parent"
@@ -237,11 +235,9 @@
                         android:inputType="text"
                         android:padding="8dp"
                         android:textSize="20sp" />
-
-
                 </LinearLayout>
-
                 <Button
+                    android:id="@+id/btnsimpan"
                     android:layout_width="160dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
@@ -250,8 +246,6 @@
                     android:layout_marginBottom="30dp"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

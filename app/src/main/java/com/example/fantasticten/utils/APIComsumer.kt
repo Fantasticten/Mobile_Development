@@ -16,10 +16,14 @@ import com.example.fantasticten.data.QueueData
 import com.example.fantasticten.data.UniqueEmailValidationResponse
 import com.example.fantasticten.data.ValidateEmailBody
 import com.example.fantasticten.data.editProfil
+import com.example.fantasticten.data.useredit
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 
 import retrofit2.http.Headers
@@ -55,9 +59,21 @@ interface APIComsumer {
     @Headers("Content-Type: application/json")
     @POST("api/get-riwayat-pasien/{id}")
     fun getPatientHistory(@Path("id") id: Int): Call<ResponseRiwayat>
+
+
+
+    @FormUrlEncoded
     @PUT("/api/user/{id}")
-    fun putUser(@Path("id")id: Int):Call<editProfil>
+    fun putUser(@Path("id")id: Int,
+                @Field("username") username :String,
+                @Field("tanggal_lahir") tanggal_lahir :String,
+                @Field("jenis_kelamin") jenis_kelamin :String,
+                @Field("phone_number") phone_number :String,
+                @Field("email") email :String,
+                @Field("alamat") alamat :String
+                ):Call<editProfil>
     @GET("/api/user/{id}")
-    fun getUser(@Path("id")id: Int):Call<editProfil>
+     fun getUser(@Path("id")id: Int):Call<editProfil>
+
 
 }
