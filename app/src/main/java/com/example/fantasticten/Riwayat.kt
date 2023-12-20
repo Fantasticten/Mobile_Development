@@ -51,7 +51,10 @@ class RiwayatActivity : AppCompatActivity() {
     }
 
     private fun loadDataFromApi() {
-        val apiService = APIService.getService()
+
+        val token = sharedPreferences.getString("token", "")
+
+        val apiService = APIService.getService(token)
         val userId = sharedPreferences.getInt("user_id", -1)
 
         apiService.getPatientHistory(userId).enqueue(object : Callback<ResponseRiwayat> {

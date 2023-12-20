@@ -133,7 +133,6 @@
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/edit_background"
-                        android:inputType="date"
                         android:padding="8dp"
                         android:textSize="20sp" />
 

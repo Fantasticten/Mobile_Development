@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/namadokter"/>
         <TextView
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:layout_marginStart="20dp"
                 android:text="Dokter GIgi Umum"
                 android:textColor="#9E9B9B"
@@ -89,7 +89,7 @@
 
         <TextView
                 android:fontFamily="@font/inter_bold"
-                android:textSize="15dp"
+                android:textSize="18dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
@@ -105,7 +105,7 @@
                 android:background="@color/black"/>
         <TextView
                 android:fontFamily="@font/inter_bold"
-                android:textSize="12dp"
+                android:textSize="16dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:layout_below="@+id/sparator"
@@ -113,9 +113,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView9"/>
+
         <TextView
                 android:fontFamily="@font/inter"
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="Klinik Gigi, Kota Pariaman, Padang"
@@ -126,7 +127,7 @@
 
         <TextView
                 android:fontFamily="@font/inter_bold"
-                android:textSize="12dp"
+                android:textSize="16dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
                 android:text="Jadwal Praktek"

@@ -4,6 +4,7 @@ import com.example.fantasticten.home_feature.chat.ChatMessage
 import com.example.fantasticten.data.ArtikelData
 import com.example.fantasticten.data.ArtikelResponse
 import com.example.fantasticten.data.AuthResponse
+import com.example.fantasticten.data.DataRekamMedis
 import com.example.fantasticten.data.DoctorResponse
 import com.example.fantasticten.data.LoginBody
 import com.example.fantasticten.data.ProgramResponse
@@ -12,6 +13,7 @@ import com.example.fantasticten.data.RegisterBody
 import com.example.fantasticten.data.ResponseKunjung
 import com.example.fantasticten.data.ResponseNotif
 import com.example.fantasticten.data.ResponseRiwayat
+import com.example.fantasticten.data.TratmentResponse
 import com.example.fantasticten.data.UniqueEmailValidationResponse
 import com.example.fantasticten.data.ValidateEmailBody
 

@@ -20,7 +20,7 @@ import java.util.Locale
 class Edit_Profile : AppCompatActivity() {
     private lateinit var binding: ActivityEditProfileBinding
     private lateinit var sharedPreferences: SharedPreferences
-    private val apiService = APIService.getService()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditProfileBinding.inflate(layoutInflater)
@@ -49,6 +49,11 @@ class Edit_Profile : AppCompatActivity() {
         if (nama.isEmpty()||tanggal.isEmpty()||kelamin.isEmpty()||notelp.isEmpty()||email.isEmpty()||alamat.isEmpty()){
             Toast.makeText(this, "lenkapi semua data", Toast.LENGTH_SHORT).show()
         }else{
+
+            val token = sharedPreferences.getString("token", "")
+
+            val apiService = APIService.getService(token)
+
             val id = apiService.putUser(id,nama,tanggal,kelamin,notelp,email,alamat)
             id.enqueue(object  : Callback<editProfil> {
                 override fun onResponse(call: Call<editProfil>, response: Response<editProfil>) {
@@ -67,6 +72,9 @@ class Edit_Profile : AppCompatActivity() {
     }
     private fun getData(){
         val userId = sharedPreferences.getInt("user_id", 1)
+        val token = sharedPreferences.getString("token", "")
+
+        val apiService = APIService.getService(token)
             val id = apiService.getUser(userId)
         id.enqueue(object :Callback<editProfil>{
             override fun onResponse(call: Call<editProfil>, response: Response<editProfil>) {

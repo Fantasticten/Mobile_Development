@@ -22,7 +22,7 @@ class RiwayatAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = dataList[position]
-        holder.bind(item)
+//        holder.bind(item)
         holder.itemView.setOnClickListener {
             onItemClick(item.id ?: -1)
         }
@@ -40,10 +40,10 @@ class RiwayatAdapter(
         private val tanggal: TextView = itemView.findViewById(R.id.kunjunganText)
         private val jam: TextView = itemView.findViewById(R.id.pukulKunjungan)
 
-        fun bind(dataItem: CompletedPatientsItem) {
-            hari.text = dataItem.hariTanggal + " di klinik" +
-                    "Kei Dental Care"
-            pukul.text = "Pukul " + dataItem.jamKunjungan
-        }
+//        fun bind(dataItem: CompletedPatientsItem) {
+//            hari.text = dataItem.hariTanggal + " di klinik" +
+//                    "Kei Dental Care"
+//            pukul.text = "Pukul " + dataItem.jamKunjungan
+//        }
     }
 }

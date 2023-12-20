@@ -34,7 +34,10 @@ class Treatment : AppCompatActivity() {
     }
 
     private fun fetchTreatmentData() {
-        val apiService = APIService.getService()
+
+        val token = sharedPreferences.getString("token", "")
+
+        val apiService = APIService.getService(token)
         val userId =  sharedPreferences.getInt("user_id", -1)
 
         GlobalScope.launch(Dispatchers.Main) {

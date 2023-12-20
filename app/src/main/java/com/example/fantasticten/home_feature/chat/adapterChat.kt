@@ -1,8 +1,6 @@
 package com.example.fantasticten.home_feature.chat
 
 
-
-import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
@@ -12,15 +10,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fantasticten.R
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.FirebaseDatabase
 
 
 class adapterChat(private val clist: List<mobileChat>):RecyclerView.Adapter<adapterChat.MyViewHolder>()
      {
          private lateinit var sharedPreferences: SharedPreferences
-         var firebaseUser  = FirebaseUser.NULL
          val messege_right= 0
          val messege_left= 1
          override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -54,12 +48,4 @@ class adapterChat(private val clist: List<mobileChat>):RecyclerView.Adapter<adap
 
          }
 
-         override fun getItemViewType(position: Int): Int {
-             if (clist[position].senderId == firebaseUser) {
-                 return messege_left
-             } else {
-                 return messege_right
-             }
-
-         }
      }

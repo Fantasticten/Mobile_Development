@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fantasticten.R
 import com.example.fantasticten.databinding.ActivityChatAktivityBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -28,7 +26,7 @@ class ChatAktivity : AppCompatActivity() {
     private lateinit var cList : ArrayList<mobileChat>
     private lateinit var recyclerView: RecyclerView
     private lateinit var sharedPreferences: SharedPreferences
-    var firebaseUser : FirebaseUser?=null
+
     var simage : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +47,7 @@ class ChatAktivity : AppCompatActivity() {
         binding.imageButton2.setOnClickListener{
             selectimage()
         }
-        firebaseUser = FirebaseAuth.getInstance().currentUser
+
         ref = FirebaseDatabase.getInstance().getReference("$index/chat")
         cList = arrayListOf()
         ref.addValueEventListener(object : ValueEventListener {
@@ -70,7 +68,6 @@ class ChatAktivity : AppCompatActivity() {
             }
         })
 
-
         binding.imageButton.setOnClickListener{
 
             saveData()
@@ -80,9 +77,7 @@ class ChatAktivity : AppCompatActivity() {
 
         }
 
-
     }
-
 
     private fun selectimage() {
         val intent  = Intent()
@@ -108,7 +103,6 @@ class ChatAktivity : AppCompatActivity() {
             catch(e : Exception){
                 Toast.makeText(this, "err", Toast.LENGTH_SHORT).show()
             }
-
 
         }
     }
