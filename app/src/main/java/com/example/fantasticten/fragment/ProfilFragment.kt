@@ -21,7 +21,6 @@ import com.example.fantasticten.Edit_Profile
 import com.example.fantasticten.ProfileRekamMedis
 import com.example.fantasticten.PusatBantuan
 import com.example.fantasticten.R
-import com.example.fantasticten.RekamMedis
 import com.example.fantasticten.RiwayatActivity
 import com.example.fantasticten.Splash
 import com.example.fantasticten.Tentangapk

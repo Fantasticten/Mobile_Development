@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="100dp"
-                    android:text="Doctor"
+                    android:text="Drg. Rima Yunita.R"
                     android:textSize="16sp" />
 
 

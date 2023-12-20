@@ -37,8 +37,8 @@ class RiwayatAdapter(
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val hari: TextView = itemView.findViewById(R.id.kunjunganText)
-        private val pukul: TextView = itemView.findViewById(R.id.pukulRiwayat)
+        private val tanggal: TextView = itemView.findViewById(R.id.kunjunganText)
+        private val jam: TextView = itemView.findViewById(R.id.pukulKunjungan)
 
         fun bind(dataItem: CompletedPatientsItem) {
             hari.text = dataItem.hariTanggal + " di klinik" +

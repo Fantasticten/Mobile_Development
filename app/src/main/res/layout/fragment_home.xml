@@ -34,7 +34,7 @@
         <androidx.cardview.widget.CardView
                 android:background="@drawable/edit_background"
                 android:id="@+id/cardview"
-                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginTop="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_width="330dp"
                 app:cardCornerRadius="@dimen/_10sdp"
@@ -59,7 +59,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/textView"/>
                 <TextView
-                        android:text="Diana Cantika Dewi"
+                        android:text="Diana Cantika Dewi "
                         android:textSize="@dimen/_16sdp"
                         android:layout_centerVertical="true"
                         android:layout_toEndOf="@+id/textView"

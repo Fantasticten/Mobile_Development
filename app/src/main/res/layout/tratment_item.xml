@@ -1,0 +1,28 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <TextView
+        android:id="@+id/tgltratment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/tblborder"
+        android:gravity="start"
+        android:padding="8dp"
+        android:text="16/12/2023" />
+
+    <TextView
+        android:id="@+id/tratmentlayanan"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/tblborder"
+        android:gravity="start"
+        android:padding="8dp"
+        android:text="Ganti Kawat gigi" />
+
+</LinearLayout>
