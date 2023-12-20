@@ -66,12 +66,6 @@ class Edit_Profile : AppCompatActivity() {
         }
     }
     private fun getData(){
-        val item = listOf(
-            "Laki-Laki",
-            "Perempuan"
-        )
-        val adapter = ArrayAdapter(this, R.layout.list_pelayanan, item)
-        binding.editJenisKelamin.setAdapter(adapter)
         val userId = sharedPreferences.getInt("user_id", 1)
             val id = apiService.getUser(userId)
         id.enqueue(object :Callback<editProfil>{
