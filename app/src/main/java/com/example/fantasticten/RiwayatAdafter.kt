@@ -1,40 +1,53 @@
-package com.example.fantasticten
+package com.example.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fantasticten.databinding.RiwayatItemBinding
+import com.example.fantasticten.R
+import com.example.fantasticten.data.CompletedPatientsItem
 
+class RiwayatPAdapter(
+    private val onItemClick: (Int) -> Unit,
+    private val onLihatRekamMedisClick: () -> Unit
+) : RecyclerView.Adapter<RiwayatPAdapter.ViewHolder>() {
 
-class RiwayatAdafter(private val list: List<RiwayatModels>, private val context: Context) :
-    RecyclerView.Adapter<RiwayatAdafter.ViewHolder>() {
-
-    class ViewHolder(val binding: RiwayatItemBinding) : RecyclerView.ViewHolder(binding.root)
+    private var dataList = mutableListOf<CompletedPatientsItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = RiwayatItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.riwayat_item, parent, false)
+        return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = list.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        with(holder) {
-            with(list[position]) {
-                binding.tvDate.text = date
-                binding.tvDoctor.text = doctor
-                binding.tvAction.text = action
+        val item = dataList[position]
+        holder.bind(item)
+        holder.itemView.setOnClickListener {
+            onItemClick(item.id ?: -1)
+        }
+    }
 
-                binding.button18.setOnClickListener {
-                    // Memulai aktivitas RekamMedis dan meneruskan data
-                    val intent = Intent(context, RekamMedis::class.java)
-                    intent.putExtra("date", date)
-                    intent.putExtra("doctor", doctor)
-                    intent.putExtra("action", action)
-                    context.startActivity(intent)
-                }
+    override fun getItemCount(): Int = dataList.size
+
+    fun setData(newData: List<CompletedPatientsItem>) {
+        dataList.clear()
+        dataList.addAll(newData)
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val tanggal: TextView = itemView.findViewById(R.id.tvDate)
+        private val layanan: TextView = itemView.findViewById(R.id.tvAction)
+        private val lihatRekamMedisButton: AppCompatButton = itemView.findViewById(R.id.button18)
+
+        fun bind(dataItem: CompletedPatientsItem) {
+            tanggal.text = "${dataItem.hariTanggal} "
+            layanan.text = "${dataItem.layanan}"
+            lihatRekamMedisButton.setOnClickListener {
+                onLihatRekamMedisClick.invoke()
             }
         }
     }

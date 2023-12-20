@@ -69,18 +69,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/circleImageView2"
-                    android:layout_width="93dp"
-                    android:layout_gravity="center"
-                    android:layout_height="102dp"
-                    android:src="@drawable/potoprofil" />
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -152,15 +140,24 @@
                         android:text="Jenis Kelamin"
                         android:textSize="15dp" />
 
-                    <EditText
-                        android:id="@+id/editTextNoTlp"
+                    <RadioGroup
+                        android:id="@+id/radioGroupJenisKelamin"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/edit_background"
-                        android:inputType="text"
-                        android:padding="8dp"
-                        android:textSize="20sp" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonLakiLaki"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Laki-laki" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonPerempuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Perempuan" />
+                    </RadioGroup>
 
                 </LinearLayout>
 
@@ -243,6 +240,7 @@
 
                 <Button
                     android:layout_width="160dp"
+                    android:id="@+id/btnsave"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="24dp"

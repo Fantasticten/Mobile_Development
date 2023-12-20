@@ -83,7 +83,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/namatratment"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -95,6 +95,7 @@
                             tools:ignore="RtlCompat" />
 
                         <TextView
+                            android:id="@+id/emailtratment"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -134,152 +135,45 @@
 
 
                 </LinearLayout>
-
-                <LinearLayout
+                <TableLayout
+                    android:id="@+id/tableLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:orientation="vertical">
+                    tools:layout_editor_absoluteX="24dp">
 
-                    <TableLayout
-                        android:id="@+id/tableLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:layout_editor_absoluteX="24dp">
+                    <TableRow>
 
-                        <TableRow>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/tblborder"
+                            android:gravity="start"
+                            android:padding="8dp"
+                            android:text="Tgl/bln/Thn"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:textStyle="bold"
-                                android:text="Tgl/bln/Thn" />
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/black" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/tblborder"
+                            android:gravity="start"
+                            android:padding="8dp"
+                            android:text="Keterangan"
+                            android:textStyle="bold" />
+                    </TableRow>
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:textStyle="bold"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="Keterangan" />
-                        </TableRow>
 
-                        <TableRow>
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="16/12/2023" />
 
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/black" />
+                </TableLayout>
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="Ganti Kawat gigi" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="" />
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/black" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="" />
-                        </TableRow>
-
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="" />
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/black" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="" />
-                        </TableRow>
-                        <TableRow>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="" />
-
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/black" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:background="@drawable/tblborder"
-                                android:gravity="start"
-                                android:padding="8dp"
-                                android:text="" />
-                        </TableRow>
-                    </TableLayout>
-                </LinearLayout>
             </LinearLayout>
+
+
+
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
