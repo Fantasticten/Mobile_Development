@@ -63,6 +63,9 @@ dependencies {
     implementation("io.socket:socket.io-client:2.0.0")
     implementation("com.google.code.gson:gson:2.8.8")
 
+    implementation("com.google.firebase:firebase-firestore:21.4.3")
+    implementation("com.firebaseui:firebase-ui-firestore:8.0.2")
+
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
