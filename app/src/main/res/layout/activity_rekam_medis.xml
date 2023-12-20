@@ -51,7 +51,7 @@
     </RelativeLayout>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
+            android:id="@+id/cardview22"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -79,7 +79,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/namaUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -91,6 +91,7 @@
                     tools:ignore="RtlCompat" />
 
                 <TextView
+                    android:id="@+id/emailuser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -108,7 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintTop_toBottomOf="@+id/cardview22">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

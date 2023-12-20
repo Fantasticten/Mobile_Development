@@ -1,59 +1,44 @@
 package com.example.fantasticten
 
-import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fantasticten.data.DataRekamMedis
-import com.example.fantasticten.utils.APIService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import retrofit2.Response
+import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
+import com.example.fantasticten.databinding.ActivityRekamMedisBinding
 
 class RekamMedis : AppCompatActivity() {
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var binding: ActivityRekamMedisBinding
+    private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rekam_medis)
+        binding = ActivityRekamMedisBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val id = 1 // Replace with the actual ID you want to fetch
+        sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        val userName = sharedPreferences.getString("username", "")
+        val userEmail = sharedPreferences.getString("email", "")
 
-        GlobalScope.launch(Dispatchers.Main) {
-            fetchDataById(id)
+        val nameTextView: TextView = binding.namaUser
+        val emailTextView: TextView = binding.emailuser
+
+        nameTextView.text = userName
+        emailTextView.text = userEmail
+
+        imageView = binding.btnrekammedisR
+        imageView.setOnClickListener {
+            onBackPressed()
         }
-    }
 
-    private suspend fun fetchDataById(rekamMedisId: Int) {
-        val apiService = APIService.getService()
+        val date = intent.getStringExtra("date")
+        val doctor = intent.getStringExtra("doctor")
+        val action = intent.getStringExtra("action")
 
-        try {
-            val response: Response<DataRekamMedis> = apiService.getRekamMedisById(rekamMedisId)
-
-            if (response.isSuccessful) {
-                val rekamMedisData: DataRekamMedis? = response.body()
-                Log.d("RekamMedisActivity", "Data retrieved successfully: $rekamMedisData")
-
-                // Set data to TextViews
-                setTextViewData(rekamMedisData)
-
-                // TODO: Handle the retrieved data here
-            } else {
-                Log.e("RekamMedisActivity", "Error: ${response.code()}, ${response.message()}")
-                // TODO: Handle the error case
-            }
-        } catch (e: Exception) {
-            Log.e("RekamMedisActivity", "Exception: ${e.message}", e)
-            // TODO: Handle exceptions, such as network errors
-        }
-    }
-
-    private fun setTextViewData(rekamMedisData: DataRekamMedis?) {
-        // Set the data to the TextViews dynamically
-        findViewById<TextView>(R.id.kederekam_medis).text = rekamMedisData?.kode_rekam_medis ?: "N/A"
-        findViewById<TextView>(R.id.layanan).text = rekamMedisData?.keluhan ?: "N/A"
-        findViewById<TextView>(R.id.tindakan).text = rekamMedisData?.tindakan ?: "N/A"
-        findViewById<TextView>(R.id.keterangan).text = rekamMedisData?.keterangan ?: "N/A"
-
+        binding.tvDate.text = date
+        binding.tvDoctor.text = doctor
+        binding.tvAction.text = action
     }
 }

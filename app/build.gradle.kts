@@ -49,8 +49,10 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation ("com.google.firebase:firebase-core:17.2.1")
-//    implementation ("com.android.support:multidex:1.0.3")
+    implementation ("androidx.recyclerview:recyclerview:1.1.0")
     implementation ("com.firebaseui:firebase-ui-firestore:8.0.2")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
@@ -69,6 +71,10 @@ dependencies {
 
 
     implementation("androidx.fragment:fragment-ktx:1.3.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.2.0")
+    implementation( "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 
 
     //gilde

@@ -18,15 +18,21 @@ import com.example.fantasticten.data.TratmentResponse
 import com.example.fantasticten.data.UniqueEmailValidationResponse
 import com.example.fantasticten.data.ValidateEmailBody
 
+import com.example.fantasticten.data.editProfil
+
 
 
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface APIComsumer {
@@ -61,8 +67,24 @@ interface APIComsumer {
     fun getPatientHistory(@Path("id") id: Int): Call<ResponseRiwayat>
 
 
+
     @GET("api/treatment/user/{user_id}")
     suspend fun getTreatmentListByUser(@Path("user_id") userId: Int): Response<TratmentResponse>
     @GET("api/rekam-medis/{id}")
     suspend fun getRekamMedisById(@Path("id") id: Int): Response<DataRekamMedis>
+
+
+    @FormUrlEncoded
+    @PUT("/api/user/{id}")
+    fun putUser(@Path("id")id: Int,
+                @Field("username") username :String,
+                @Field("tanggal_lahir") tanggal_lahir :String,
+                @Field("jenis_kelamin") jenis_kelamin :String,
+                @Field("phone_number") phone_number :String,
+                @Field("email") email :String,
+                @Field("alamat") alamat :String
+                ):Call<editProfil>
+    @GET("/api/user/{id}")
+     fun getUser(@Path("id")id: Int):Call<editProfil>
+
 }

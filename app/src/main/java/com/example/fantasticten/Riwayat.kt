@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adapter.RiwayatPAdapter
@@ -19,14 +20,17 @@ class RiwayatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRiwayatBinding
     private lateinit var riwayatAdapter: RiwayatPAdapter
     private lateinit var sharedPreferences: SharedPreferences
-
+    private lateinit var imageView: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRiwayatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
-
+        imageView = binding.btnrwytkunjungan
+        imageView.setOnClickListener {
+            onBackPressed()
+        }
         setupRecyclerView()
         loadDataFromApi()
     }
