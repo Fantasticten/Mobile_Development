@@ -31,8 +31,6 @@ class Daftar_Antrian : AppCompatActivity() {
     private lateinit var pelayananDropdown: AutoCompleteTextView
     private lateinit var sharedPreferences: SharedPreferences
 
-    private val apiService = APIService.getService()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daftar_antrian)
@@ -114,6 +112,9 @@ class Daftar_Antrian : AppCompatActivity() {
         progressDialog.show()
 
         val queueData = QueueData(namaLengkap, userId, pelayanan, noTlp, hariTanggal)
+
+        val token = sharedPreferences.getString("token", "")
+        val apiService = APIService.getService(token)
 
         apiService.addQueue(queueData).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {

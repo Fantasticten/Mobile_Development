@@ -91,8 +91,7 @@
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:text="Hai, Diana Cantika Dewi \n
-                     \n
-Pendaftaran kamu sudah diterima oleh dokter! Silahkan
+                     \nPendaftaran kamu sudah diterima oleh dokter! Silahkan
 klik tombol dibawah  untuk melihat nomor antrian kamu agar kamu bisa datang ke Klinik.  Jangan sampai salah jadwal dan jangan lupa perlihatkan ke dokter nomor antrian mu.\n \n
 Sampai Ketemu di klinik. "
                      />

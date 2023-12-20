@@ -6,10 +6,27 @@
              android:layout_height="match_parent"
              tools:context=".fragment.HomeFragment">
 
-
     <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
+<!--        <WebView-->
+<!--            android:id="@+id/webViewInFragment"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            tools:ignore="WebViewLayout" />-->
+
+<!--        <WebView-->
+<!--            android:id="@+id/webViewInFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            tools:ignore="WebViewLayout" />-->
+
+
         <RelativeLayout android:layout_width="match_parent"
                         android:background="@color/hijau"
                         android:layout_height="@dimen/_70sdp"/>
@@ -56,7 +73,6 @@
                 android:layout_height="match_parent">
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         </androidx.cardview.widget.CardView>
         <ScrollView
@@ -240,8 +256,5 @@
         </ScrollView>
 
     </RelativeLayout>
-
-
-
 
 </FrameLayout>

@@ -19,9 +19,12 @@ class LoginActivityViewModel(val authRepository: AuthRepository, val application
     private var errorMessage: MutableLiveData<HashMap<String, String>> = MutableLiveData()
     private var user: MutableLiveData<User> = MutableLiveData()
 
-    private val authResponseLiveData: MutableLiveData<AuthResponse> = MutableLiveData()
+//    private val authResponseLiveData: MutableLiveData<AuthResponse> = MutableLiveData()
 
-    fun getAuthResponseLiveData(): LiveData<AuthResponse> = authResponseLiveData
+    private val _authResponseLiveData: MutableLiveData<AuthResponse?> = MutableLiveData()
+    val authResponseLiveData: LiveData<AuthResponse?> get() = _authResponseLiveData
+
+//    fun getAuthResponseLiveData(): LiveData<AuthResponse> = authResponseLiveData
     fun getIsLoading(): LiveData<Boolean> = isLoading
     fun getErrorMessage(): LiveData<HashMap<String, String>> = errorMessage
     fun getUser(): LiveData<User> = user
@@ -29,8 +32,6 @@ class LoginActivityViewModel(val authRepository: AuthRepository, val application
     private val userLiveData: MutableLiveData<User> = MutableLiveData()
 
     fun getUserLiveData(): LiveData<User> = userLiveData
-
-    constructor() : this(AuthRepository(APIService.getService()), Application())
 
     private val _userState: MutableLiveData<User?> = MutableLiveData()
     val userState: LiveData<User?> get() = _userState
@@ -47,7 +48,8 @@ class LoginActivityViewModel(val authRepository: AuthRepository, val application
                         _userState.value = it.data.user
                         user.value = it.data.user
                         userLiveData.value = it.data.user
-                        AuthToken.getInstance(application.baseContext).token = it.data.token
+                        _authResponseLiveData.value = it.data
+                        AuthToken.getInstance(application).token = it.data.token
                     }
                     is RequestStatus.Error -> {
                         isLoading.value = false

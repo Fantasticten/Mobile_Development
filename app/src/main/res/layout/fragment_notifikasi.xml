@@ -59,88 +59,57 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="78dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/notif"
+            <LinearLayout
+                android:id="@+id/emptyStateNotif"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                app:cardCornerRadius="0dp"
-                android:layout_marginTop="30dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="#9E9B9B">
+                android:layout_height="470dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="-50dp"
+                    android:contentDescription="Gambar Transaksi"
+                    android:src="@drawable/notif_nodata"
+                    tools:ignore="HardcodedText" />
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Belum ada isinya nih..."
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
 
-                        <TextView android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:text="1"
-                        android:background="@drawable/badge_background"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textAlignment="center"
-                        android:textStyle="bold"
-                        tools:ignore="RtlCompat" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Anda belum mempunyai notifikasi dari admin .."
+                    tools:ignore="HardcodedText" />
 
-                    </LinearLayout>
+            </LinearLayout>
 
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_toEndOf="@+id/imageView"
-                        android:text="Pendaftaran kamu sudah diterima oleh dokter!
-Silahkan klik untuk melihat nomor antrian!"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="13dp"
-                        android:lineSpacingExtra="8dp"
-                        tools:ignore="RtlCompat" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewNotif"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                app:cardCornerRadius="0dp"
-                app:cardElevation="1dp"
-                android:layout_marginTop="20dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="#9E9B9B">
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_notifikasi" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_toEndOf="@+id/imageView"
-                        android:text="Pendaftaran kamu sudah diterima oleh dokter!
-Silahkan klik untuk melihat nomor antrian!"
-                        android:textSize="13dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:lineSpacingExtra="8dp"
-                        tools:ignore="RtlCompat" />
-
-            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

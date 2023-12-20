@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/emptyStateLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="-50dp"
+        android:contentDescription="Gambar Transaksi"
+        android:src="@drawable/notif_nodata"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Belum ada isinya nih..."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Anda belum mempunyai notifikasi dari admin .."
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

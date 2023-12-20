@@ -1,20 +1,21 @@
 package com.example.fantasticten.utils
 
-import org.json.JSONException
-import org.json.JSONObject
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 object SimplifiedMessage {
     fun get(stringMessage: String): HashMap<String, String> {
         val message = HashMap<String, String>()
-        val jsonObject = JSONObject(stringMessage)
-
         try {
-            val  jsonMessage = jsonObject.getJSONObject("message")
-            jsonMessage.keys().forEach { message[it] = jsonMessage.getString(it) }
-        } catch (e: JSONException) {
-            message["message"] = jsonObject.getString("message")
+            val jsonObject = Gson().fromJson<HashMap<String, String>>(
+                stringMessage,
+                object : TypeToken<HashMap<String, String>>() {}.type
+            )
+            message.putAll(jsonObject)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-
         return message
     }
 }
+

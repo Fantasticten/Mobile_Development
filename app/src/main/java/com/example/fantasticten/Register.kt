@@ -1,6 +1,8 @@
 package com.example.fantasticten
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -30,12 +32,19 @@ import java.lang.StringBuilder
 
 class Register : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListener, View.OnKeyListener, TextWatcher {
 
+    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var mBinding: ActivityRegisterBinding
     private lateinit var mViewModel: RegisterActivityViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityRegisterBinding.inflate(LayoutInflater.from(this))
         setContentView(mBinding.root)
+
+        sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+
+        val token = sharedPreferences.getString("token", "")
+
         mBinding.editTextNamaLengkap.onFocusChangeListener = this
         mBinding.editTextEmail.onFocusChangeListener = this
         mBinding.editTextNoTlp.onFocusChangeListener = this
@@ -44,12 +53,14 @@ class Register : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeLi
         mBinding.editTextSandiRef.setOnKeyListener(this)
         mBinding.editTextSandiRef.addTextChangedListener(this)
         mBinding.daftarGo.setOnClickListener(this)
-        mViewModel = ViewModelProvider(this, RegisterActivityViewModelFactory(AuthRepository(APIService.getService()), application)).get(RegisterActivityViewModel::class.java)
+        mViewModel = ViewModelProvider(this, RegisterActivityViewModelFactory(AuthRepository(APIService.getService(token)), application)).get(RegisterActivityViewModel::class.java)
         setUpObservers()
 
         findViewById<TextView>(R.id.masukLog).setOnClickListener {
             startActivity(Intent(this, login::class.java))
         }
+
+
 
     }
 

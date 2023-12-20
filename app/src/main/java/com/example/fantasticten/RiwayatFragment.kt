@@ -24,6 +24,7 @@ class RiwayatFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RiwayatAdapter
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +49,7 @@ class RiwayatFragment : Fragment() {
         val userId = sharedPreferences.getInt("user_id", 1)
 
 
-        val service = APIService.getService()
+        val service = APIService.getService(sharedPreferences.getString("token", ""))
         val call = service.getPatientHistory(userId)
 
         call.enqueue(object : Callback<ResponseRiwayat> {

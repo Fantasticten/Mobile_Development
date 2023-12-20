@@ -105,10 +105,11 @@
 
                 <TextView
                     android:fontFamily="@font/inter_bold"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
+                    android:textColor="@color/black"
                     android:text=" Jadwal Kunjungan Kamu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -119,30 +120,72 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/black"/>
-                <TextView
-                    android:fontFamily="@font/inter"
-                    android:textSize="12sp"
-                    android:id="@+id/kunjunganText"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="20dp"
+
+                <LinearLayout
+                    android:id="@+id/emptyStateJadwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:gravity="center"
+                    android:visibility="gone"
                     android:layout_below="@+id/sparator"
-                    android:text="Rabu, 15 November 2023, di klinik"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="Empty State Image"
+                        android:src="@drawable/calendar_amico"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Belum ada kunjungan nih ..."
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textAlignment="center"
+                        android:text="Kamu belum memiliki kunjungan nih silahkan \n melakukan daftar antrian ... "
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:id="@+id/kunjunganText"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/pukulRiwayat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:layout_marginTop="5dp"
+                        android:text=""/>
+
+                </LinearLayout>
 
 
-                <TextView
-                    android:fontFamily="@font/inter"
-                    android:textSize="14sp"
-                    android:id="@+id/pukulRiwayat"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="20dp"
-                    android:text="Pukul 16.00 WIB"
-                    android:layout_below="@+id/kunjunganText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
             </RelativeLayout>
 
         </LinearLayout>

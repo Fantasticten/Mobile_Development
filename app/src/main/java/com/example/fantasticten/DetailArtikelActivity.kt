@@ -1,5 +1,7 @@
 package com.example.fantasticten
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -17,56 +19,86 @@ class DetailArtikelActivity : AppCompatActivity() {
     private lateinit var textPenulis: TextView
     private lateinit var textIsiArtikel: TextView
 
+    private lateinit var sharedPreferences: SharedPreferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_artikel)
 
-        // Inisialisasi view
-        imageViewArtikel = findViewById(R.id.imageAr)
-        textJudulArtikel = findViewById(R.id.text_judul_artikel)
-        textPenulis = findViewById(R.id.text_penulis)
-        textIsiArtikel = findViewById(R.id.text_isi_artikel)
+        val backButton: ImageView = findViewById(R.id.backArtikel)
+        backButton.setOnClickListener { onBackPressed() }
 
-        // Ambil ID artikel dari intent
-        val artikelId = intent.getStringExtra("artikel_id")
+        val artikelId = intent.getStringExtra("ARTIKEL_ID")
+        val artikel: ArtikelModel? = artikelId?.let { ArtikelRepository.getArtikelById(it) }
 
-        // Ambil detail artikel dari API
-        fetchArtikelDetails(artikelId)
+        artikel?.let { displayArtikel(it) }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this@DetailArtikelActivity, message, Toast.LENGTH_SHORT).show()
+    private fun displayArtikel(artikel: ArtikelModel) {
+        val imageArtikel: ImageView = findViewById(R.id.imageAr)
+        val judulTextView: TextView = findViewById(R.id.text_judul_artikel)
+        val isiTextView: TextView = findViewById(R.id.text_isi_artikel)
+        val penulisTextView: TextView = findViewById(R.id.text_penulis)
+
+        imageArtikel.setImageResource(artikel.gambarResourceId)
+        judulTextView.text = artikel.judul
+        isiTextView.text = resources.getString(artikel.isiResourceId)
+        penulisTextView.text = artikel.penulis
     }
 
-    private fun fetchArtikelDetails(artikelId: String?) {
-        // Gunakan Retrofit untuk mengambil detail artikel berdasarkan artikelId
-        val apiService = APIService.getService()
-        GlobalScope.launch(Dispatchers.Main) {
-            try {
-                val response = apiService.getDetailArtikel(artikelId.orEmpty())
-                if (response.isSuccessful) {
-                    val artikel = response.body()
 
-                    // Perbarui UI dengan detail artikel
-                    artikel?.let {
-                        Glide.with(this@DetailArtikelActivity)
-                            .load("https://keydentalcare.isepwebtim.my.id/img/${it.gambar_artikel}")
-                            .placeholder(R.drawable.artike1)
-                            .error(R.drawable.program)
-                            .into(imageViewArtikel)
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_detail_artikel)
+//
+//        sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+//
+//        imageViewArtikel = findViewById(R.id.imageAr)
+//        textJudulArtikel = findViewById(R.id.text_judul_artikel)
+//        textPenulis = findViewById(R.id.text_penulis)
+//        textIsiArtikel = findViewById(R.id.text_isi_artikel)
+//
+//
+//        val artikelId = intent.getStringExtra("artikel_id")
+//
+//        fetchArtikelDetails(artikelId)
+//    }
 
-                        textJudulArtikel.text = it.judul_artikel
-                        textPenulis.text = "By ${it.penulis}"
-                        textIsiArtikel.text = it.isi_artikel
-                    }
-                } else {
-                    // Tangani kesalahan
-                    showToast("Gagal mengambil detail artikel")
-                }
-            } catch (e: Exception) {
-                // Tangani pengecualian
-                e.printStackTrace()
-            }
-        }
-    }
+//    private fun showToast(message: String) {
+//        Toast.makeText(this@DetailArtikelActivity, message, Toast.LENGTH_SHORT).show()
+//    }
+//
+//    private fun fetchArtikelDetails(artikelId: String?) {
+//
+//        val token = sharedPreferences.getString("token", "")
+//        val apiService = APIService.getService(token)
+//        GlobalScope.launch(Dispatchers.Main) {
+//            try {
+//                val response = apiService.getDetailArtikel(artikelId.orEmpty())
+//                if (response.isSuccessful) {
+//                    val artikel = response.body()
+//
+//
+//                    artikel?.let {
+//                        Glide.with(this@DetailArtikelActivity)
+//                            .load("https://keydentalcare.isepwebtim.my.id/img/${it.gambar_artikel}")
+//                            .placeholder(R.drawable.artike1)
+//                            .error(R.drawable.program)
+//                            .into(imageViewArtikel)
+//
+//                        textJudulArtikel.text = it.judul_artikel
+//                        textPenulis.text = "By ${it.penulis}"
+//                        textIsiArtikel.text = it.isi_artikel
+//                    }
+//                } else {
+//
+//                    showToast("Gagal mengambil detail artikel")
+//                }
+//            } catch (e: Exception) {
+//
+//                e.printStackTrace()
+//            }
+//        }
+//    }
 }

@@ -1,5 +1,7 @@
 package com.example.fantasticten.home_feature
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -21,8 +23,7 @@ class Dokter : AppCompatActivity() {
     private lateinit var infoklinik: TextView
     private lateinit var jadwalPraktek: TextView
     private lateinit var imageViewDokter: ImageView
-
-    private val apiService = APIService.getService()
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,26 +35,36 @@ class Dokter : AppCompatActivity() {
         jadwalPraktek = findViewById(R.id.jadwal_praktek)
         imageViewDokter = findViewById(R.id.imageViewdokter)
 
+        sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+
         fetchDataFromApi()
     }
 
     private fun fetchDataFromApi() {
+        val token = sharedPreferences.getString("token", "")
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val response = apiService.getDoctors()
+                val userToken = token ?: ""
 
-                withContext(Dispatchers.Main) {
-                    if (response.isSuccessful) {
-                        val doctor = response.body()?.doctors?.get(0)
-                        doctor?.let { displayDoctorInfo(it) }
-                    } else {
-                        Log.e("API Error", "Failed to fetch data: ${response.code()}")
-                        Log.e("API Error", "Response body: ${response.errorBody()?.string()}")
-                        Toast.makeText(
-                            this@Dokter,
-                            "Failed to fetch data from API",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                if (userToken.isEmpty()) {
+                    Log.e("API_ERROR", "Token is empty")
+                } else {
+                    val apiService = APIService.getService(userToken)
+                    val response = apiService.getDoctors()
+
+                    withContext(Dispatchers.Main) {
+                        if (response.isSuccessful) {
+                            val doctor = response.body()?.doctors?.get(0)
+                            doctor?.let { displayDoctorInfo(it) }
+                        } else {
+                            Log.e("API Error", "Failed to fetch data: ${response.code()}")
+                            Log.e("API Error", "Response body: ${response.errorBody()?.string()}")
+                            Toast.makeText(
+                                this@Dokter,
+                                "Failed to fetch data from API",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
                 }
             } catch (e: Exception) {
@@ -74,7 +85,7 @@ class Dokter : AppCompatActivity() {
         spelesiasi.text = doctor.spesialisasi
         infoklinik.text = doctor.info_klinik
 
-        val jadwalPraktekText = "Jadwal Praktek: ${doctor.jadwal_praktek.replace("\\s\\d", " - ")}"
+        val jadwalPraktekText = "${doctor.jadwal_praktek.replace("\\s\\d", " - ")}"
         jadwalPraktek.text = jadwalPraktekText
 
 

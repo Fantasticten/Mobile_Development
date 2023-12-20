@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/notif"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="0dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#9E9B9B">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:background="@drawable/bgchatright"
+                    android:src="@drawable/notif_hd"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/isiNotifikasiBis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:lineSpacingExtra="8dp"
+                android:text="Pendaftaran kamu sudah diterima oleh dokter!
+Silahkan klik untuk melihat nomor antrian!"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                tools:ignore="RtlCompat,TextSizeCheck" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

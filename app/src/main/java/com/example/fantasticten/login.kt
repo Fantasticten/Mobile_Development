@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import com.example.fantasticten.data.AuthResponse
 import com.example.fantasticten.data.LoginBody
 import com.example.fantasticten.data.ValidateEmailBody
 import com.example.fantasticten.databinding.ActivityLoginBinding
@@ -34,6 +35,9 @@ class login : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val sharedPreferences = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        val token = sharedPreferences.getString("token", "")
+
         mBinding = ActivityLoginBinding.inflate(LayoutInflater.from(this))
         setContentView(mBinding.root)
 
@@ -46,7 +50,7 @@ class login : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListe
 
         mViewModel = ViewModelProvider(
             this,
-            LoginActivityViewModelFactory(AuthRepository(APIService.getService()), application)
+            LoginActivityViewModelFactory(AuthRepository(APIService.getService("")), application)
         ).get(LoginActivityViewModel::class.java)
 
         setUpObservers()
@@ -59,11 +63,18 @@ class login : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListe
             startActivity(Intent(this, Lupa_Sandi::class.java))
         }
 
-        mViewModel.getUser().observe(this) { user ->
-            user?.let {
-                val coba = "Username: ${it.username}, Email: ${it.email}"
-                Log.d("LoginActivity", "Data from API: $coba")
-                Log.d("LoginActivity", "id: ${it.id}")
+        if (token != null) {
+            if (token.isNotEmpty()) {
+                mViewModel.getUser().observe(this) { user ->
+                    user?.let {
+                        val coba = "Username: ${it.username}, Email: ${it.email}"
+                        Log.d("LoginActivity", "Data from API: $coba")
+                        Log.d("LoginActivity", "id: ${it.id}")
+                    }
+                }
+            } else {
+                Log.d("LoginActivity", "Token is empty, user is not logged in.")
+
             }
         }
 
@@ -110,24 +121,24 @@ class login : AppCompatActivity(), View.OnClickListener, View.OnFocusChangeListe
             }
         }
 
-        mViewModel.getUser().observe(this) { user ->
-            if (user != null) {
-                userViewModel.setUser(user)
+        mViewModel.authResponseLiveData.observe(this) { authResponse ->
+            if (authResponse != null) {
+                val user = authResponse.user
+                val userToken = authResponse.token
 
                 saveLoginDataToSharedPreferences(
                     user.id,
                     user.username,
                     user.email,
                     user.phone_number,
-                    "<token_here>"
+                    userToken
                 )
-
                 saveLoginStatus(true)
 
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             } else {
-                Log.d("LoginActivity", "User data is null")
+                Log.d("LoginActivity", "Auth response is null")
             }
         }
     }

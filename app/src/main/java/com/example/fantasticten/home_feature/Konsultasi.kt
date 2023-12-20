@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.fantasticten.R
-import com.example.fantasticten.home_feature.chat.ChatAktivity
+import com.example.fantasticten.home_feature.chat.Chat2Activity
 
 class Konsultasi : AppCompatActivity() {
     private lateinit var chat_button : Button
@@ -21,7 +21,7 @@ class Konsultasi : AppCompatActivity() {
 
         chat_button.setOnClickListener {
 
-            val inten = Intent(this,ChatAktivity::class.java)
+            val inten = Intent(this, Chat2Activity::class.java)
             startActivity(inten)
         }
     }

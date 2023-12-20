@@ -5,12 +5,16 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.ImageButton
 
 import android.widget.Toast
@@ -26,6 +30,7 @@ import com.example.fantasticten.DetailArtikelActivity
 import com.example.fantasticten.LokasiActivity
 import com.example.fantasticten.R
 import com.example.fantasticten.adapter.ArtikelAdapter
+import com.example.fantasticten.adapter.iklanAdapLocal
 import com.example.fantasticten.data.ArtikelData
 import com.example.fantasticten.home_feature.*
 import com.example.fantasticten.iklan_item
@@ -34,13 +39,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomeFragment : Fragment() {
-
+    private lateinit var newsarrayList: ArrayList<iklan_item>
     private lateinit var recyclerView: RecyclerView
     private lateinit var artikelAdapter: ArtikelAdapter
-    private val apiService = APIService.getService()
+    private lateinit var iklanAdapter: iklanAdapLocal
+    private val apiService = APIService.getService("")
     lateinit var imageid :Array<Int>
     lateinit var tulis :Array<String>
     lateinit var iklan2 :Array<String>
@@ -114,41 +123,60 @@ class HomeFragment : Fragment() {
     }
     private var artikelList: MutableList<ArtikelData> = mutableListOf()
 
-    private fun setdataList() {
-        GlobalScope.launch(Dispatchers.IO) {
-            try {
-                val response = apiService.getartic()
-
-                withContext(Dispatchers.Main) {
-                    if (response.isSuccessful) {
-                        artikelList.clear()
-                        artikelList.addAll(response.body()?.articles ?: emptyList())
-                        artikelAdapter.notifyDataSetChanged()
-                    } else {
-                        showToast("Failed to fetch artikel data from API")
-                    }
-                }
-            } catch (e: Exception) {
-                showToast("An error occurred: ${e.message}")
-            }
-        }
-    }
-
-
+//    private fun setdataList() {
+//        GlobalScope.launch(Dispatchers.IO) {
+//            try {
+//                val response = apiService.getartic()
+//
+//                withContext(Dispatchers.Main) {
+//                    if (response.isSuccessful) {
+//                        artikelList.clear()
+//                        artikelList.addAll(response.body()?.articles ?: emptyList())
+//                        artikelAdapter.notifyDataSetChanged()
+//                    } else {
+//                        showToast("Failed to fetch artikel data from API")
+//                    }
+//                }
+//            } catch (e: Exception) {
+//                showToast("An error occurred: ${e.message}")
+//            }
+//        }
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Set up RecyclerView
-        recyclerView = view.findViewById(R.id.recyle2)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        artikelAdapter = ArtikelAdapter(requireContext(), artikelList)
-        recyclerView.adapter = artikelAdapter
-
-
-        // Load data
         setdataList()
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recyle2)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        iklanAdapter = iklanAdapLocal(newsarrayList)
+        recyclerView.adapter = iklanAdapter
 
+        iklanAdapter.setOnItemClickListener(object : iklanAdapLocal.OnItemClickListener {
+            override fun onItemClick(artikelId: String) {
+                startDetailActivity(artikelId)
+            }
+        })
+    }
+
+
+    private fun setdataList() {
+        newsarrayList = arrayListOf<iklan_item>()
+        imageid = arrayOf(
+            R.drawable.imageartikel,
+            R.drawable.imageartikel2,
+            R.drawable.imageartikel3,
+        )
+        tulis = arrayOf(
+            "Berikut ini adalah beberapa cara mencegah gigi berlubang pada anak-anak",
+            "Penyebab gigi copot dan cara mengatasinya",
+            "Berikut ini adalah cara mengatasi gigi kuning menurut dokter gigi",
+        )
+        for (i in imageid.indices){
+            val news = iklan_item(imageid[i],tulis[i], i)
+            newsarrayList.add(news)
+        }
     }
 
 

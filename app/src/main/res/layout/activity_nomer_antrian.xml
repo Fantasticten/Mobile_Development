@@ -77,7 +77,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="20dp"
+                    android:layout_margin="15dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -118,12 +118,13 @@
                                 android:gravity="start" />
 
                             <TextView
+                                android:id="@+id/namaPasien"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="17dp"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                android:text="Diana Cantika Dewi"
+                                android:text=""
                                 android:layout_weight="1" />
                         </TableRow>
                         <TableRow android:layout_marginTop="15dp">
@@ -148,12 +149,13 @@
                                 android:gravity="start" />
 
                             <TextView
+                                android:id="@+id/pelayananPasien"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="17dp"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                android:text="Nambal Gigi Dewasa"
+                                android:text=""
                                 android:layout_weight="1" />
                         </TableRow>
                         <TableRow android:layout_marginTop="15dp">
@@ -178,12 +180,13 @@
                                 android:gravity="start" />
 
                             <TextView
+                                android:id="@+id/nomerHpPasien"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="17dp"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                android:text="081299094123"
+                                android:text=""
                                 android:layout_weight="1" />
                         </TableRow>
                         <TableRow android:layout_marginTop="15dp">
@@ -208,12 +211,13 @@
                                 android:gravity="start" />
 
                             <TextView
+                                android:id="@+id/jadwalPasien"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="17dp"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                android:text="Rabu / 15-11-2023"
+                                android:text=""
                                 android:layout_weight="1" />
                         </TableRow>
                         <TableRow android:layout_marginTop="15dp">
@@ -238,12 +242,13 @@
                                 android:gravity="start" />
 
                             <TextView
+                                android:id="@+id/waktuPasien"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="17dp"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                android:text="11 / 16.00 WIB"
+                                android:text=""
                                 android:layout_weight="1" />
                         </TableRow>
                     </TableLayout>

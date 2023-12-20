@@ -32,7 +32,7 @@ class ArtikelAdapter(private val context: Context, private val artikelList: List
         val currentItem = artikelList[position]
 
         Glide.with(context)
-            .load("https://keydentalcare.isepwebtim.my.id/img/${currentItem.gambar_artikel}")
+            .load("http://192.168.1.105:3000/img/${currentItem.gambar_artikel}")
             .placeholder(R.drawable.artikel2) // Ganti dengan placeholder yang sesuai
             .error(R.drawable.artikel2)
             .into(holder.imageView)

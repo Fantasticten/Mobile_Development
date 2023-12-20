@@ -41,7 +41,7 @@ class RiwayatAdapter(
         private val pukul: TextView = itemView.findViewById(R.id.pukulRiwayat)
 
         fun bind(dataItem: CompletedPatientsItem) {
-            hari.text = dataItem.hariTanggal + " di klinik\n" +
+            hari.text = dataItem.hariTanggal + " di klinik" +
                     "Kei Dental Care"
             pukul.text = "Pukul " + dataItem.jamKunjungan
         }
